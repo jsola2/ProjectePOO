@@ -1,7 +1,8 @@
-
+import model.LlistaProductes;
 
 public class GestorDades {
 
+    private LlistaProductes llista;
     public Object carregarDades;
 
     public Object getCarregarDades() {
@@ -9,10 +10,17 @@ public class GestorDades {
     }
 
     public Object consultar;
-    public Object afegir;
 
-    public Object esborrar;
+    public void afegirProducte(){
+        llista.agregarProducte();
+    }
+
+    public void esborrarProducte(String pNom){
+        llista.eliminarProducte(pNom);
+    }
     public Object sortir;
+
+
 
 }
 
