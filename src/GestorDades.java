@@ -13,6 +13,7 @@ public class GestorDades {
 
     public Object esborrar;
     public Object sortir;
+
 }
 
 
