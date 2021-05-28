@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class GestorDades {
 
 
-    public Object carregarDades ();
+    /*public Object carregarDades ();
 
 
     public Object getCarregarDades() {
@@ -24,6 +24,6 @@ public class GestorDades {
 
     public void esborrar () {
 
-    public Object sortir;
+    public Object sortir;*/
 
      }

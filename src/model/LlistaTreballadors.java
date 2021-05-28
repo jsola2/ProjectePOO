@@ -5,10 +5,7 @@ import java.util.Scanner;
 
 public class LlistaTreballadors {
     private ArrayList<Treballador> treballadorNou;
-    private String nom;
-    private String cognom;
-    private String dni;
-    private int categoria;
+
 public LlistaTreballadors(){
 
     treballadorNou = new ArrayList<>();
@@ -16,28 +13,30 @@ public LlistaTreballadors(){
     public void afegirTreballador() {
 
         Scanner in = new Scanner(System.in);
-        String afegirNom = in.next();
-        String afegirCognom = in.next();
-        String afegirDni = in.next();
+        String nom = in.next();
+        String cognom = in.next();
+        String dni = in.next();
         int categoriaTipus = in.nextInt();
-        Treballador nou = new Treballador(afegirNom, afegirCognom, afegirDni, categoriaTipus);
+        Treballador nou = new Treballador(nom, cognom, dni, categoriaTipus);
         for (int i = 0; i < treballadorNou.size(); i++) {
                 if (!treballadorNou.get(i).getDni().equals(dni)) {
                     treballadorNou.add(nou);
                 } else {
-
+                    System.out.println("Aquest treballador ja està creat");
                 }
             }
         }
-    }
+
 
     public void esborrarTreballador() {
 
-    Scanner seleccio = new Scanner(System.in);
+    Scanner dniEsborrar = new Scanner(System.in);
 
         for (int i = 0; i < treballadorNou.size(); i++) {
-            if (treballadorNou.get(i).equals(dni)){
-
+            if (treballadorNou.get(i).getDni().equals(dniEsborrar)){
+                treballadorNou.remove(i);
+            }else{
+                System.out.println("Aquest treballador no es pot esborrar per que no existeix a la base de dades");
             }
         }
     }
