@@ -3,9 +3,9 @@ import model.LlistaProductes;
 public class GestorDades {
 
     private LlistaProductes llista;
-    public Object carregarDades;
+    public String carregarDades;
 
-    public Object getCarregarDades() {
+    public String getCarregarDades() {
         return carregarDades;
     }
 
