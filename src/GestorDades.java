@@ -1,8 +1,10 @@
+import model.LlistaClients;
 import model.LlistaProductes;
 
 public class GestorDades {
 
-    private LlistaProductes llista;
+    private LlistaProductes llistaP;
+    private LlistaClients   llistaC;
     public String carregarDades;
 
     public String getCarregarDades() {
@@ -12,12 +14,21 @@ public class GestorDades {
     public Object consultar;
 
     public void afegirProducte(){
-        llista.agregarProducte();
+        llistaP.agregarProducte();
     }
 
     public void esborrarProducte(String pNom){
-        llista.eliminarProducte(pNom);
+        llistaP.eliminarProducte(pNom);
     }
+
+    public void afegirClient(){
+        llistaP.agregarProducte();
+    }
+
+    public void esborrarClient(String pDni){
+        llistaP.eliminarProducte(pDni);
+    }
+
     public Object sortir;
 
 
