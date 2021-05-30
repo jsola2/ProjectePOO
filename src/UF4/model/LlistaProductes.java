@@ -10,7 +10,9 @@ public class LlistaProductes{
         llista = new ArrayList<Producte>();
     }
 
-    public void eliminarProducte (String pNom){
+    public void eliminarProducte (){
+        Scanner in = new Scanner(System.in);
+        String pNom = in.next();
         int pos = 0;
         for (int i = 0; i< llista.size(); i++) {
             if (llista.get(i).getNom().equals(pNom)){
