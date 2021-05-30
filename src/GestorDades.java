@@ -18,7 +18,7 @@ public class GestorDades {
     }
 
     public void esborrarProducte(String pNom){
-        llistaP.eliminarProducte(pNom);
+        llistaP.eliminarProducte();
     }
 
     public void afegirClient(){
@@ -26,7 +26,7 @@ public class GestorDades {
     }
 
     public void esborrarClient(String pDni){
-        llistaP.eliminarProducte(pDni);
+        llistaP.eliminarProducte();
     }
 
     public Object sortir;

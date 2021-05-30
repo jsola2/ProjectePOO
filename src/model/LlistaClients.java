@@ -9,6 +9,7 @@ public class LlistaClients {
 
 
     public LlistaClients(ArrayList<Clients> llista) {
+
         this.llista = llista;
     }
 
@@ -39,7 +40,9 @@ public class LlistaClients {
         }
     }
 
-    public void eliminarClient(String pDni){
+    public void eliminarClient(){
+        Scanner in = new Scanner(System.in);
+        String pDni = in.next();
         int pos = 0;
         boolean dniIgual = false;
         for (int i = 0; i< llista.size(); i++) {
