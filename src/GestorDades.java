@@ -1,18 +1,27 @@
-
+import model.LlistaProductes;
 
 public class GestorDades {
 
-    public Object carregarDades;
+    private LlistaProductes llista;
+    public String carregarDades;
 
-    public Object getCarregarDades() {
+    public String getCarregarDades() {
         return carregarDades;
     }
 
     public Object consultar;
-    public Object afegir;
 
-    public Object esborrar;
+    public void afegirProducte(){
+        llista.agregarProducte();
+    }
+
+    public void esborrarProducte(String pNom){
+        llista.eliminarProducte(pNom);
+    }
     public Object sortir;
+
+
+
 }
 
 
