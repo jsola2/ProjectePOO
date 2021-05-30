@@ -1,4 +1,4 @@
-package model;
+package UF4.model;
 
 import java.util.Scanner;
 
