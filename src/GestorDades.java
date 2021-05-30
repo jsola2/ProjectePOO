@@ -25,7 +25,7 @@ public class GestorDades {
          switch (menuAfegir){
 
               case 1 : a.afegirTreballador();break;
-              case 2 :
+              case 2 : llista.afegirProducte();break;
               case 3 :
               case 0 :
             }
