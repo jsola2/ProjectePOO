@@ -13,16 +13,24 @@ public class ProjectePOO {
 
             System.out.println("Escull una opcio: ");
             System.out.println("""
-                    Afegir client(1)\s
+                    Afegir producte(1)
                     Esborrar client(2)
-                    Consultar dades(3)""");
+                    Consultar dades de productes(3)
+                    Afegir client(4)\s
+                    Esborrar client(5)
+                    Consultar dades(6)
+                    """);
 
             while (true){
+                    System.out.println("tria opció:");
                     int opcio = in.nextInt();
                     switch (opcio) {
-                            case 1 -> gestor.afegirClient();
-                            case 2-> gestor.esborrarClient();
-                            case 3-> gestor.mostrarClient();
+                            case 1 -> gestor.afegirProducte();
+                            case 2-> gestor.esborrarProducte();
+                            case 3-> gestor.mostrarProducte();
+                            case 4 -> gestor.afegirClient();
+                            case 5-> gestor.esborrarClient();
+                            case 6-> gestor.mostrarClient();
                     }
             }
 
