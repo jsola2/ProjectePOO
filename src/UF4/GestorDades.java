@@ -1,4 +1,6 @@
 package UF4;
+import UF4.model.Producte;
+import UF4.model.Treballador;
 import UF4.model.clients;
 
 import java.sql.SQLException;
@@ -18,6 +20,40 @@ public class GestorDades {
     public void mostrarClient () throws SQLException{
         clients s = new clients();
         s.mostrarClientBD();
+    }
+
+    public void afegirProducte () throws SQLException {
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte(in.next(), in.nextFloat(), in.next());
+        p.afegirProducteBD();
+    }
+    public void esborrarProducte () throws SQLException {
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte(in.nextLine());
+        p.borrarProducte();
+    }
+    public void mostrarProducte () throws SQLException{
+        Producte p = new Producte();
+        p.mostrarProducteBD();
+    }
+    public void afegirTreballador() throws SQLException {
+
+        Scanner in = new Scanner(System.in);
+        Treballador nou = new Treballador(in.nextLine(), in.nextLine(), in.nextLine(), in.nextInt());
+        nou.afegirTreballadorBD();
+    }
+    public void esborrarTreballador() throws SQLException {
+
+        Scanner in = new Scanner(System.in);
+        Treballador esborrar = new Treballador(in.nextLine(),in.nextLine(),in.nextLine(),in.nextInt());
+        esborrar.esborrarTreballadorBD();
+
+    }
+    public void mostrarTreballador() throws SQLException {
+
+        Treballador mostrar = new Treballador();
+        mostrar.mostrarTreballadorBD();
+
     }
     /*
     public Object carregarDades ();
