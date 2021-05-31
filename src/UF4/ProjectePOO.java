@@ -11,14 +11,14 @@ public class ProjectePOO {
             Scanner in = new Scanner(System.in);
             GestorDades gestor = new GestorDades();
 
-            System.out.println("Escull una opcio: ");
+            Interficie.mostrarMissatge("Escull una opcio: ");
             System.out.println("""
                     Afegir producte(1)
                     Esborrar producte(2)
                     Consultar dades de productes(3)
                     Afegir client(4)\s
                     Esborrar client(5)
-                    Consultar dades(6)
+                    Consultar dades de client(6)
                     """);
 
             while (true){
