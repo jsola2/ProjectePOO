@@ -37,8 +37,8 @@ public class Producte {
         }
         consulta.setInt(1,contador);
         consulta.setString(2,nom);
-        consulta.setFloat(3,preu);
-        consulta.setString(4,codi);
+        consulta.setFloat(4,preu);
+        consulta.setString(3,codi);
         consulta.executeUpdate();
     }
 

@@ -10,6 +10,7 @@ public class clients {
     protected String cognom;
     protected String dni;
     protected boolean clientVip;
+
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection s = connect.getConnection();
 
