@@ -14,7 +14,7 @@ public class ProjectePOO {
             System.out.println("Escull una opcio: ");
             System.out.println("""
                     Afegir producte(1)
-                    Esborrar client(2)
+                    Esborrar producte(2)
                     Consultar dades de productes(3)
                     Afegir client(4)\s
                     Esborrar client(5)

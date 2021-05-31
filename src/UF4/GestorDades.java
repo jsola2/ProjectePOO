@@ -23,7 +23,7 @@ public class GestorDades {
 
     public void afegirProducte () throws SQLException {
         Scanner in = new Scanner(System.in);
-        Producte p = new Producte(in.next(), in.nextFloat(), in.next());
+        Producte p = new Producte(in.next(),in.nextFloat(), in.next());
         p.afegirProducteBD();
     }
     public void esborrarProducte () throws SQLException {

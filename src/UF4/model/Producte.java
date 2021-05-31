@@ -35,6 +35,7 @@ public class Producte {
         while(rs.next()) {
             contador++;
         }
+
         consulta.setInt(1,contador);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
@@ -44,12 +45,10 @@ public class Producte {
 
     public void borrarProducte () throws SQLException {
 
-        PreparedStatement v = connexio.prepareStatement("DELETE FROM productes WHERE nom = ? AND preu = ? AND codi = ? ");
+        PreparedStatement consulta = connexio.prepareStatement("DELETE FROM productes WHERE codi = ? ");
 
-        v.setString(1,nom);
-        v.setFloat(2,preu);
-        v.setString(3,codi);
-        v.executeUpdate();
+        consulta.setString(1,codi);
+        consulta.executeUpdate();
     }
 
     public void mostrarProducteBD() throws SQLException {
@@ -64,7 +63,7 @@ public class Producte {
             nom = rs.getString("nom");
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
-            System.out.println(nom  + ", " + nom + ", " + preu + ", " + codi);
+            System.out.println(nom  + ", " + preu + ", " + codi);
         }
 
         connexio.close();
