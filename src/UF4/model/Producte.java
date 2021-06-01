@@ -1,6 +1,7 @@
 package UF4.model;
 
 import UF4.ConectarBaseDades;
+import UF4.Interficie;
 
 import java.sql.*;
 
@@ -22,7 +23,6 @@ public class Producte {
     }
 
     public Producte() {
-        System.out.println("Resultat: ");
     }
 
 
@@ -64,6 +64,63 @@ public class Producte {
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
             System.out.println(nom  + ", " + preu + ", " + codi);
+        }
+
+        connexio.close();
+    }
+
+    public void mostrarProductaFiltratPerNom(String pnom) throws SQLException{
+        Statement stmt= connexio.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
+        String nom;
+        float preu;
+        String codi;
+
+        while(rs.next()) {
+                nom = rs.getString("nom");
+                preu = rs.getFloat("preu");
+                codi = rs.getString("codi");
+            if (pnom.equals( nom)) {
+                System.out.println(nom + ", " + preu + ", " + codi);
+            }
+        }
+
+        connexio.close();
+    }
+
+    public void mostrarProductaFiltratPerPreu(float pPreu) throws SQLException{
+        Statement stmt= connexio.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
+        String nom;
+        float preu;
+        String codi;
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            preu = rs.getFloat("preu");
+            codi = rs.getString("codi");
+            if (pPreu == preu) {
+                System.out.println(nom + ", " + preu + ", " + codi);
+            }
+        }
+
+        connexio.close();
+    }
+
+    public void mostrarProductaFiltratPerCodi(String pCodi) throws SQLException{
+        Statement stmt= connexio.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
+        String nom;
+        float preu;
+        String codi;
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            preu = rs.getFloat("preu");
+            codi = rs.getString("codi");
+            if (pCodi.equals(codi)) {
+                System.out.println(nom + ", " + preu + ", " + codi);
+            }
         }
 
         connexio.close();

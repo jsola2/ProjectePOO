@@ -35,6 +35,28 @@ public class GestorDades {
         Producte p = new Producte();
         p.mostrarProducteBD();
     }
+
+    public void mostrarProductePerNom () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte();
+        System.out.println("nom per filtrar:");
+        p.mostrarProductaFiltratPerNom(in.next());
+    }
+
+    public void mostrarProductePerPreu () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte();
+        System.out.println("preu per filtrar:");
+        p.mostrarProductaFiltratPerPreu(in.nextFloat());
+    }
+
+    public void mostrarProductePerCodi () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte();
+        System.out.println("codi per filtrar:");
+        p.mostrarProductaFiltratPerCodi(in.next());
+    }
+
     /*
     public Object carregarDades ();
 
