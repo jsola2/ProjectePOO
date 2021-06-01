@@ -5,16 +5,15 @@ import UF4.ConectarBaseDades;
 import java.sql.*;
 
 
-public class clients {
-    protected String nom;
-    protected String cognom;
-    protected String dni;
+public class clients extends Persona {
+
     protected boolean clientVip;
 
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection s = connect.getConnection();
 
     public clients(String nom , String cognoms, String dni, boolean clientVip){
+        super(nom,cognoms,dni);
         this.nom = nom;
         this.cognom = cognoms;
         this.dni = dni;
@@ -22,12 +21,15 @@ public class clients {
     }
 
     public clients(String nomBorrar, String cognomsBorrar, String dniBorrar)  {
+        super(nomBorrar,cognomsBorrar,dniBorrar);
         this.nom = nomBorrar;
         this.cognom = cognomsBorrar;
         this.dni = dniBorrar;
     }
 
     public clients() {
+        super();
+
         System.out.println("Resultat: ");
     }
 

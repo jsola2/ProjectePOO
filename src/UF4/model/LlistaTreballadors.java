@@ -10,7 +10,7 @@ public LlistaTreballadors(){
 
     treballadorNou = new ArrayList<>();
 }
-    public void afegirTreballador() {
+    /*public void afegirTreballador() {
 
         Scanner in = new Scanner(System.in);
         String nom = in.next();
@@ -25,10 +25,10 @@ public LlistaTreballadors(){
                     System.out.println("Aquest treballador ja està creat");
                 }
             }
-        }
+        }*/
 
 
-    public void esborrarTreballador() {
+    /*public void esborrarTreballador() {
 
     Scanner dniEsborrar = new Scanner(System.in);
 
@@ -39,5 +39,5 @@ public LlistaTreballadors(){
                 System.out.println("Aquest treballador no es pot esborrar per que no existeix a la base de dades");
             }
         }
-    }
+    }*/
 }
