@@ -55,6 +55,7 @@ public class GestorDades {
         mostrar.mostrarTreballadorBD();
 
     }
+
     /*
     public Object carregarDades ();
 
