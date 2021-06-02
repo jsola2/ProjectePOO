@@ -80,7 +80,7 @@ public class Producte {
                 nom = rs.getString("nom");
                 preu = rs.getFloat("preu");
                 codi = rs.getString("codi");
-            if (pnom.equals( nom)) {
+            if (pnom.equals(nom)) {
                 System.out.println(nom + ", " + preu + ", " + codi);
             }
         }

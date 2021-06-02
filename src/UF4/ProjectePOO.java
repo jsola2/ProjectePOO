@@ -33,9 +33,9 @@ public class ProjectePOO {
                         int opcio = in.nextInt();
                         switch (opcio) {
                                 case 1:
-                                        gestor.afegirProducte();
+                                        gestor.afegirProducte();break;
                                 case 2:
-                                        gestor.esborrarProducte();
+                                        gestor.esborrarProducte();break;
                                 case 3: {
                                         while (!fiSubmenuProductes) {
                                                 System.out.println(
@@ -49,9 +49,9 @@ public class ProjectePOO {
                                                 int opcioSubmenuProducte = in.nextInt();
                                                 switch (opcioSubmenuProducte) {
                                                         case 1:
-                                                                gestor.mostrarProductePerNom();
+                                                                gestor.mostrarProductePerNom();break;
                                                         case 2:
-                                                                gestor.mostrarProductePerPreu();
+                                                                gestor.mostrarProductePerPreu();break;
                                                         case 3:
                                                                 gestor.mostrarProductePerCodi();
                                                         case 4:
@@ -62,18 +62,17 @@ public class ProjectePOO {
                                         }
                                 }
                                 case 4:
-                                        gestor.afegirClient();
+                                        gestor.afegirClient();break;
                                 case 5:
-                                        gestor.esborrarClient();
+                                        gestor.esborrarClient();break;
                                 case 6:
-                                        gestor.mostrarClient();
+                                        gestor.mostrarClient();break;
                                 case 7:
-                                        gestor.afegirTreballador();
+                                        gestor.afegirTreballador();break;
                                 case 8:
-                                        gestor.esborrarTreballador();
-                                case 9:
-                                        gestor.mostrarTreballador();
-                                {
+                                        gestor.esborrarTreballador();break;
+                                case 9: {
+
                                         while (!fiSubmenuTreballador) {
                                                 System.out.println(
                                                         "1- Filtar per nom" + "\n" +
@@ -87,15 +86,15 @@ public class ProjectePOO {
                                                 int opcioSubmenuProducte = in.nextInt();
                                                 switch (opcioSubmenuProducte) {
                                                         case 1:
-                                                                gestor.mostrarTreballadorPerNom();
+                                                                gestor.mostrarTreballadorPerNom();break;
                                                         case 2:
-                                                                gestor.mostrarTreballadorCognom();
+                                                                gestor.mostrarTreballadorCognom();break;
                                                         case 3:
-                                                                gestor.mostrarTreballadorPerDni();
+                                                                gestor.mostrarTreballadorPerDni();break;
                                                         case 4:
-                                                                gestor.mostrarTreballadorPerCategoria();
+                                                                gestor.mostrarTreballadorPerCategoria();break;
                                                         case 5:
-                                                                gestor.mostrarProducte();
+                                                                gestor.mostrarTreballador();break;
                                                         case 0:
                                                                 fiSubmenuTreballador = true;
                                                 }
