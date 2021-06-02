@@ -77,5 +77,31 @@ public class GestorDades {
         mostrar.mostrarTreballadorBD();
 
     }
+    public void mostrarTreballadorPerNom () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Treballador t = new Treballador();
+        System.out.println("nom per filtrar:");
+        t.mostrarTreballadorPerNom(in.next());
+    }
+
+    public void mostrarTreballadorCognom () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Treballador t = new Treballador();
+        System.out.println("cognom per filtrar:");
+        t.mostrarTreballadorCognom(in.next());
+    }
+
+    public void mostrarTreballadorPerDni () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Treballador t = new Treballador();
+        System.out.println("dni per filtrar:");
+        t.mostrarTreballadorPerDni(in.next());
+    }
+    public void mostrarTreballadorPerCategoria () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Treballador t = new Treballador();
+        System.out.println("categoria per filtrar:");
+        t.mostrarTreballadorPerCategoria(in.next());
+    }
 
 }
