@@ -13,6 +13,7 @@ public class ProjectePOO {
                 boolean fimenu = false;
                 boolean fiSubmenuProductes = false;
                 boolean fiSubmenuTreballador = false;
+                boolean fiSubmenuClient = false;
 
 
                 while (!fimenu) {
@@ -33,10 +34,10 @@ public class ProjectePOO {
                         int opcio = in.nextInt();
                         switch (opcio) {
                                 case 1:
-                                        gestor.afegirProducte();
+                                        gestor.afegirProducte();break;
                                 case 2:
-                                        gestor.esborrarProducte();
-                                case 3: {
+                                        gestor.esborrarProducte();break;
+                                case 3:
                                         while (!fiSubmenuProductes) {
                                                 System.out.println(
                                                         "1- Filtar per nom" + "\n" +
@@ -49,29 +50,44 @@ public class ProjectePOO {
                                                 int opcioSubmenuProducte = in.nextInt();
                                                 switch (opcioSubmenuProducte) {
                                                         case 1:
-                                                                gestor.mostrarProductePerNom();
+                                                                gestor.mostrarProductePerNom(); break;
                                                         case 2:
-                                                                gestor.mostrarProductePerPreu();
+                                                                gestor.mostrarProductePerPreu();break;
                                                         case 3:
-                                                                gestor.mostrarProductePerCodi();
+                                                                gestor.mostrarProductePerCodi();break;
                                                         case 4:
-                                                                gestor.mostrarProducte();
+                                                                gestor.mostrarProducte();break;
                                                         case 5:
-                                                                fiSubmenuProductes = true;
+                                                                fiSubmenuProductes = true;break;
                                                 }
                                         }
-                                }
+                                        break;
                                 case 4:
-                                        gestor.afegirClient();
+                                        gestor.afegirClient();break;
                                 case 5:
-                                        gestor.esborrarClient();
+                                        gestor.esborrarClient();break;
                                 case 6:
-                                        gestor.mostrarClient();
+                                        while (!fiSubmenuClient){
+                                                System.out.println(
+                                                        """
+                                                        1- Filtar per nom i dni
+                                                        2- Mostrar nomes clients Vip
+                                                        3- Sense filtrat
+                                                        0- Sortir"""
+                                                );
+                                                int opcioSubmenuClient = in.nextInt();
+                                                switch (opcioSubmenuClient){
+                                                        case 1: gestor.mostrarClientPerNom(); break;
+                                                        case 2: gestor.mostrarClientsPerVip(); break;
+                                                        case 3: gestor.mostrarClient(); break;
+                                                        case 0: fiSubmenuClient = true; break;
+                                                }
+                                        }break;
                                 case 7:
-                                        gestor.afegirTreballador();
+                                        gestor.afegirTreballador();break;
                                 case 8:
-                                        gestor.esborrarTreballador();
-                                case 9:
+                                        gestor.esborrarTreballador();break;
+                               /* case 9:
                                         gestor.mostrarTreballador();
                                 {
                                         while (!fiSubmenuTreballador) {
@@ -100,9 +116,9 @@ public class ProjectePOO {
                                                                 fiSubmenuTreballador = true;
                                                 }
                                         }
-                                }
+                                }*/
                                 case 0:
-                                        fimenu = true;
+                                        fimenu = true;break;
                         }
                 }
         }
