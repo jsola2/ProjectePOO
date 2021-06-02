@@ -1,8 +1,10 @@
 package UF4.model;
 
 import UF4.ConectarBaseDades;
+import UF4.Interficie;
 
 import java.sql.*;
+import java.util.Objects;
 
 
 public class clients extends Persona {
@@ -29,22 +31,21 @@ public class clients extends Persona {
 
     public clients() {
         super();
-
-        System.out.println("Resultat: ");
+        Interficie.mostrarMissatge("Resultat: ");
     }
 
 
     public void afegirClientBD () throws SQLException {
-        int contador = 1;
+        int client_id = 0;
         PreparedStatement v = s.prepareStatement("INSERT INTO clients VALUES (?,?,?,?,?)");
 
         Statement stmt=s.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM clients");
 
         while(rs.next()) {
-            contador++;
+            client_id = rs.getInt("client_id");
         }
-        v.setInt(1,contador);
+        v.setInt(1,client_id+1);
         v.setString(2,nom);
         v.setString(3,cognom);
         v.setString(4,dni);
@@ -76,9 +77,60 @@ public class clients extends Persona {
             cognom = rs.getString("cognom");
             dni = rs.getString("dni");
             clientVip = rs.getBoolean("clientVip");
-            System.out.println(nom  + ", " + cognom + ", " + dni + ", " + clientVip);
+            Interficie.mostrarMissatge(nom  + ", " + cognom + ", " + dni + ", " + clientVip);
         }
 
+        s.close();
+    }
+
+    public void mostrarClientPerNomBD(String nomClient, String dniClient) throws SQLException {
+        Statement stmt=s.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM clients");
+        String nom;
+        String cognom;
+        String dni;
+        boolean clientVip;
+        String resultat = null;
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            cognom = rs.getString("cognom");
+            dni = rs.getString("dni");
+            clientVip = rs.getBoolean("clientVip");
+
+            if (nomClient.equals(nom) && dni.equals(dniClient)){
+                resultat = (nom  + ", " + cognom + ", " + dni + ", " + clientVip);
+            }
+        }
+        Interficie.mostrarMissatge(Objects.requireNonNullElse(resultat, "No s'ha trobat el client"));
+        s.close();
+    }
+
+    public void mostrarClientsVipBD () throws SQLException {
+        Statement stmt=s.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM clients");
+        String nom;
+        String cognom;
+        String dni;
+        boolean clientVip;
+        String resultat = "";
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            cognom = rs.getString("cognom");
+            dni = rs.getString("dni");
+            clientVip = rs.getBoolean("clientVip");
+
+            if (clientVip){
+                resultat = (nom  + ", " + cognom + ", " + dni + ", " + clientVip) + "\n" + resultat;
+            }
+        }
+
+        if (resultat.equals("")){
+            Interficie.mostrarMissatge("No s'ha trobat ningun client vip");
+        } else {
+            Interficie.mostrarMissatge(resultat);
+        }
         s.close();
     }
 
