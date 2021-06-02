@@ -10,24 +10,45 @@ public class ProjectePOO {
 
             Scanner in = new Scanner(System.in);
             GestorDades gestor = new GestorDades();
+            boolean fimenu = false;
+            boolean fiSubmenuProductes = false;
 
-            Interficie.mostrarMissatge("Escull una opcio: ");
-            System.out.println("""
+
+            while (fimenu){
+                    System.out.println("Escull una opcio: ");
+                    System.out.println("""
                     Afegir producte(1)
                     Esborrar producte(2)
                     Consultar dades de productes(3)
                     Afegir client(4)\s
                     Esborrar client(5)
-                    Consultar dades de client(6)
+                    Consultar dades(6)
                     """);
-
-            while (true){
                     System.out.println("tria opció:");
                     int opcio = in.nextInt();
                     switch (opcio) {
                             case 1 -> gestor.afegirProducte();
                             case 2-> gestor.esborrarProducte();
-                            case 3-> gestor.mostrarProducte();
+                            case 3-> {
+                                    while (!fiSubmenuProductes){
+                                            System.out.println("""
+                                            Filtar per nom(1)
+                                            Filtrar per preu(2)
+                                            Filtrar per codi(3)
+                                            Sense filtrat(4)\s
+                                            Sortir (5)
+                                            """);
+                                            System.out.println("tria opció:");
+                                            int opcioSubmenuProducte = in.nextInt();
+                                            switch (opcioSubmenuProducte){
+                                                    case 1-> gestor.mostrarProductePerNom();
+                                                    case 2-> gestor.mostrarProductePerPreu();
+                                                    case 3-> gestor.mostrarProductePerCodi();
+                                                    case 4->gestor.mostrarProducte();
+                                                    case 5->fiSubmenuProductes = true;
+                                            }
+                                    }
+                            }
                             case 4 -> gestor.afegirClient();
                             case 5-> gestor.esborrarClient();
                             case 6-> gestor.mostrarClient();

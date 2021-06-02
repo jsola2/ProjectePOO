@@ -1,6 +1,5 @@
 package UF4;
 import UF4.model.Producte;
-import UF4.model.Treballador;
 import UF4.model.clients;
 
 import java.sql.SQLException;
@@ -24,7 +23,7 @@ public class GestorDades {
 
     public void afegirProducte () throws SQLException {
         Scanner in = new Scanner(System.in);
-        Producte p = new Producte(in.next(), in.nextFloat(), in.next());
+        Producte p = new Producte(in.next(),in.nextFloat(), in.next());
         p.afegirProducteBD();
     }
     public void esborrarProducte () throws SQLException {
@@ -36,24 +35,26 @@ public class GestorDades {
         Producte p = new Producte();
         p.mostrarProducteBD();
     }
-    public void afegirTreballador() throws SQLException {
 
+    public void mostrarProductePerNom () throws SQLException{
         Scanner in = new Scanner(System.in);
-        Treballador nou = new Treballador(in.nextLine(), in.nextLine(), in.nextLine(), in.nextInt());
-        nou.afegirTreballadorBD();
+        Producte p = new Producte();
+        System.out.println("nom per filtrar:");
+        p.mostrarProductaFiltratPerNom(in.next());
     }
-    public void esborrarTreballador() throws SQLException {
 
+    public void mostrarProductePerPreu () throws SQLException{
         Scanner in = new Scanner(System.in);
-        Treballador esborrar = new Treballador(in.nextLine(),in.nextLine(),in.nextLine(),in.nextInt());
-        esborrar.esborrarTreballadorBD();
-
+        Producte p = new Producte();
+        System.out.println("preu per filtrar:");
+        p.mostrarProductaFiltratPerPreu(in.nextFloat());
     }
-    public void mostrarTreballador() throws SQLException {
 
-        Treballador mostrar = new Treballador();
-        mostrar.mostrarTreballadorBD();
-
+    public void mostrarProductePerCodi () throws SQLException{
+        Scanner in = new Scanner(System.in);
+        Producte p = new Producte();
+        System.out.println("codi per filtrar:");
+        p.mostrarProductaFiltratPerCodi(in.next());
     }
 
     /*
