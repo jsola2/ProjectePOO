@@ -36,13 +36,11 @@ public class Interficie {
 
     public static void mostarSubMenuClients(){
         System.out.println(
-                "1- Filtar per nom" + "\n" +
-                        "2- Filtrar per nom" + "\n" +
-                        "3- Filtrar per cognom" + "\n" +
-                        "4- Filtrar per dni" + "\n" +
-                        "5- Filtrar per ClientVip" + "\n" +
-                        "6- Sense filtrat" + "\n" +
-                        "0- Sortir"
+                """
+                1- Filtar per nom i dni
+                2- Mostrar nomes clients Vip
+                3- Sense filtrat
+                0- Sortir"""
         );
     }
 
@@ -56,5 +54,7 @@ public class Interficie {
                         "0- Sortir"
         );
     }
+
+
 }
 

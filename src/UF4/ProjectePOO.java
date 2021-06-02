@@ -13,6 +13,7 @@ public class ProjectePOO {
         boolean fimenu = false;
         boolean fiSubmenuProductes = false;
         boolean fiSubmenuTreballador = false;
+        boolean fiSubmenuClient = false;
 
 
         while (!fimenu) {
@@ -57,8 +58,16 @@ public class ProjectePOO {
                     gestor.esborrarClient();
                     break;
                 case 6:
-                    gestor.mostrarClient();
-                    break;
+                    while (!fiSubmenuClient){
+                        Interficie.mostarSubMenuClients();
+                        int opcioSubmenuClient = in.nextInt();
+                        switch (opcioSubmenuClient){
+                            case 1: gestor.mostrarClientPerNom(); break;
+                            case 2: gestor.mostrarClientsPerVip(); break;
+                            case 3: gestor.mostrarClient(); break;
+                            case 0: fiSubmenuClient = true; break;
+                        }
+                    }break;
                 case 7:
                     gestor.afegirTreballador();
                     break;
@@ -69,8 +78,8 @@ public class ProjectePOO {
                     while (!fiSubmenuTreballador) {
                         Interficie.mostarSubMenuEmpleats();
                         Interficie.mostrarMissatge("Tria una opció:");
-                        int opcioSubmenuProducte = in.nextInt();
-                        switch (opcioSubmenuProducte) {
+                        int opcioSubmenuTreballador = in.nextInt();
+                        switch (opcioSubmenuTreballador) {
                             case 1:
                                 gestor.mostrarTreballadorPerNom();
                                 break;
