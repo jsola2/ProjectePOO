@@ -41,14 +41,14 @@ public class Treballador {
     }
 
 
-    enum tipusDempleat {
+    enum TipusDempleat {
 
 
         NETEJA(1),
         CAMBRER(2),
         BARMAN(3);
 
-        tipusDempleat(int categoria) {
+        TipusDempleat(int categoria) {
         }
     }
     public void afegirTreballadorBD() throws SQLException {
@@ -77,6 +77,7 @@ public class Treballador {
 
         esborrar.setString(1,dni);
 
+        conexio.close();
     }
     public void mostrarTreballadorBD() throws  SQLException {
 
@@ -90,7 +91,7 @@ public class Treballador {
             categoria = mostrar.getInt("categoria");
             System.out.println(nom  + ", " + cognom + ", " + dni + ", " + categoria);
         }
-
+        conexio.close();
     }
 
 }
