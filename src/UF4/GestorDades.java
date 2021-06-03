@@ -1,8 +1,7 @@
 package UF4;
 import UF4.model.Producte;
 import UF4.model.Treballador;
-import UF4.model.clients;
-import com.mysql.cj.xdevapi.Client;
+import UF4.model.Clients;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -10,29 +9,47 @@ import java.util.Scanner;
 public class GestorDades {
     Scanner in =  new Scanner(System.in);
     public void afegirClient () throws SQLException {
-        Interficie.mostrarMissatge("Dni: ");String nom = in.nextLine();
-        Interficie.mostrarMissatge("Nom: ");String cognom = in.nextLine();
-        Interficie.mostrarMissatge("Cognom");String dni = in.nextLine();
-        Interficie.mostrarMissatge("Client Vip?: ");boolean clientVip = in.nextBoolean();
-        clients s = new clients(nom,cognom,dni,clientVip);
+        Interficie.mostrarMissatge("Dni: ");
+        String dni = in.nextLine();
+        Interficie.mostrarMissatge("Nom: ");
+        String nom = in.nextLine();
+        Interficie.mostrarMissatge("Cognom");
+        String cognom = in.nextLine();
+        Interficie.mostrarMissatge("Client Vip?: ");
+        boolean clientVip = in.nextBoolean();
+        Clients s = new Clients(nom,cognom,dni,clientVip);
         s.afegirClientBD();
     }
     public void esborrarClient () throws SQLException {
-        clients s = new clients(in.nextLine(),in.nextLine(),in.nextLine());
+        Interficie.mostrarMissatge("Nom: ");
+        String nom = in.nextLine();
+        Interficie.mostrarMissatge("Cognom: ");
+        String cognom = in.nextLine();
+        Interficie.mostrarMissatge("DNI: ");
+        String dni = in.nextLine();
+        Clients s = new Clients(in.nextLine(),in.nextLine(),in.nextLine());
         s.borrarClient();
     }
     public void mostrarClient () throws SQLException{
-        clients s = new clients();
+        Clients s = new Clients();
         s.mostrarClientBD();
     }
 
     public void afegirProducte () throws SQLException {
-        Producte p = new Producte(in.next(),in.nextFloat(), in.next());
+        Interficie.mostrarMissatge("Nom: ");
+        String nom = in.nextLine();
+        Interficie.mostrarMissatge("preu: ");
+        float preu= in.nextFloat();
+        Interficie.mostrarMissatge("codi: ");
+        String codi = in.next();
+        Producte p = new Producte(nom,preu,codi);
         p.afegirProducteBD();
     }
     public void esborrarProducte () throws SQLException {
         Scanner in = new Scanner(System.in);
-        Producte p = new Producte(in.nextLine());
+        Interficie.mostrarMissatge("codi: ");
+        String codi = in.next();
+        Producte p = new Producte(codi);
         p.borrarProducte();
     }
     public void mostrarProducte () throws SQLException{
@@ -104,13 +121,13 @@ public class GestorDades {
         String nomClient = in.nextLine();
         String dniclient = in.nextLine();
 
-        clients mostrarNom = new clients();
+        Clients mostrarNom = new Clients();
         mostrarNom.mostrarClientPerNomBD(nomClient,dniclient);
 
     }
 
     public void mostrarClientsPerVip () throws SQLException {
-        clients mostrarClientsVips = new clients();
+        Clients mostrarClientsVips = new Clients();
         mostrarClientsVips.mostrarClientsVipBD();
     }
 

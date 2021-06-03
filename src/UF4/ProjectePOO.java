@@ -11,12 +11,12 @@ public class ProjectePOO {
         Scanner in = new Scanner(System.in);
         GestorDades gestor = new GestorDades();
         boolean fimenu = false;
-        boolean fiSubmenuProductes = false;
-        boolean fiSubmenuTreballador = false;
-        boolean fiSubmenuClient = false;
 
 
         while (!fimenu) {
+            boolean fiSubmenuProductes = false;
+            boolean fiSubmenuTreballador = false;
+            boolean fiSubmenuClient = false;
             Interficie.mostrarMissatge("Escull una opcio: ");
             Interficie.mostrarMenu();
             Interficie.mostrarMissatge("Tria una opció:");

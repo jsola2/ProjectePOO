@@ -7,14 +7,14 @@ import java.sql.*;
 import java.util.Objects;
 
 
-public class clients extends Persona {
+public class Clients extends Persona {
 
     protected boolean clientVip;
 
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection s = connect.getConnection();
 
-    public clients(String nom , String cognoms, String dni, boolean clientVip){
+    public Clients(String nom , String cognoms, String dni, boolean clientVip){
         super(nom,cognoms,dni);
         this.nom = nom;
         this.cognom = cognoms;
@@ -22,14 +22,14 @@ public class clients extends Persona {
         this.clientVip = clientVip;
     }
 
-    public clients(String nomBorrar, String cognomsBorrar, String dniBorrar)  {
+    public Clients(String nomBorrar, String cognomsBorrar, String dniBorrar)  {
         super(nomBorrar,cognomsBorrar,dniBorrar);
         this.nom = nomBorrar;
         this.cognom = cognomsBorrar;
         this.dni = dniBorrar;
     }
 
-    public clients() {
+    public Clients() {
         super();
         Interficie.mostrarMissatge("Resultat: ");
     }
