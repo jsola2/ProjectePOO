@@ -19,7 +19,18 @@ public class Treballador extends Persona {
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection connexio = connect.getConnection();
 
-    public Treballador(String nom, String cognom, String dni, String poblacio,String adreca, int cat) {
+    @Override
+    public String toString() {
+        return "Treballador{" +
+                "nom='" + nom + '\'' +
+                ", cognom='" + cognom + '\'' +
+                ", dni='" + dni + '\'' +
+                ", poblacio='" + poblacio + '\'' +
+                ", adreca='" + adreca + '\'' +
+                '}';
+    }
+
+    public Treballador(String nom, String cognom, String dni, String poblacio, String adreca, int cat) {
         super(nom, cognom, dni, poblacio, adreca);
         if (cat == 1) {
             categoria = TipusDempleat.NETEJA;
@@ -37,20 +48,10 @@ public class Treballador extends Persona {
         super(dni);
     }
 
-    @Override
-    public String toString() {
-        return "Treballador{" +
-                "nom='" + nom + '\'' +
-                ", cognom='" + cognom + '\'' +
-                ", dni='" + dni + '\'' +
-                ", categoria=" + categoria +
-                '}';
-    }
-
     public void afegirTreballadorBD() throws SQLException {
         int empleat_id = 0;
         Statement stmt = connexio.createStatement();
-        PreparedStatement insertar = connexio.prepareStatement("INSERT INTO empleats VALUES (?,?,?,?,?)");
+        PreparedStatement insertar = connexio.prepareStatement("INSERT INTO empleats VALUES (?,?,?,?,?,?,?)");
 
 
         ResultSet resultat = stmt.executeQuery("SELECT * FROM empleats");
@@ -64,6 +65,8 @@ public class Treballador extends Persona {
         insertar.setString(3, cognom);
         insertar.setString(4, dni);
         insertar.setString(5, String.valueOf(categoria));
+        insertar.setString(6,poblacio);
+        insertar.setString(6,adreca);
         insertar.executeUpdate();
 
         connexio.close();
@@ -95,7 +98,9 @@ public class Treballador extends Persona {
                 cognom = mostrar.getString("cognom");
                 dni = mostrar.getString("dni");
                 categoria = TipusDempleat.valueOf(mostrar.getString("categoria"));
-                Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                poblacio = mostrar.getString("poblacio");
+                adreca = mostrar.getString("adreca");
+                Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", "+ "DNI: " + dni + ", "+ "Categoria: " + categoria + ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
             }
         } catch (Exception e) {
             Interficie.mostrarMissatge("Error al connectar la base de dades");
@@ -111,14 +116,18 @@ public class Treballador extends Persona {
             String cognom;
             String dni;
             String categoria;
+            String poblacio;
+            String adreca;
 
             while (rs.next()) {
                 nom = rs.getString("nom");
                 cognom = rs.getString("cognom");
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
                 if (pnom.equalsIgnoreCase(nom)) {
-                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", "+ "DNI: " + dni + ", "+ "Categoria: " + categoria + ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -137,14 +146,18 @@ public class Treballador extends Persona {
             String cognom;
             String dni;
             String categoria;
+            String poblacio;
+            String adreca;
 
             while (rs.next()) {
                 nom = rs.getString("nom");
                 cognom = rs.getString("cognom");
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
                 if (pCognom.equalsIgnoreCase(cognom)) {
-                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", "+ "DNI: " + dni + ", "+ "Categoria: " + categoria + ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -163,14 +176,18 @@ public class Treballador extends Persona {
             String cognom;
             String dni;
             String categoria;
+            String poblacio;
+            String adreca;
 
             while (rs.next()) {
                 nom = rs.getString("nom");
                 cognom = rs.getString("cognom");
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
                 if (pDni.equalsIgnoreCase(dni)) {
-                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", "+ "DNI: " + dni + ", "+ "Categoria: " + categoria + ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -189,14 +206,18 @@ public class Treballador extends Persona {
             String cognom;
             String dni;
             String categoria;
+            String poblacio;
+            String adreca;
 
             while (rs.next()) {
                 nom = rs.getString("nom");
                 cognom = rs.getString("cognom");
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
                 if (pCategoria.equalsIgnoreCase(categoria)) {
-                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", "+ "DNI: " + dni + ", "+ "Categoria: " + categoria + ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
