@@ -17,6 +17,7 @@ public class ProjectePOO {
             boolean fiSubmenuProductes = false;
             boolean fiSubmenuTreballador = false;
             boolean fiSubmenuClient = false;
+            Interficie.mostrarMissatge("Benvingut al sistema gestor BRJ©");
             Interficie.mostrarMissatge("Escull una opcio: ");
             Interficie.mostrarMenu();
             Interficie.mostrarMissatge("Tria una opció:");
