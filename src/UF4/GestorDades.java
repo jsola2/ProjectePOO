@@ -50,7 +50,11 @@ public class GestorDades {
         float preu= in.nextFloat();
         Interficie.mostrarMissatge("codi: ");
         String codi = in.next();
-        Producte p = new Producte(nom,preu,codi);
+        Interficie.mostrarMissatge("Marca: ");
+        String marca = in.next();
+        Interficie.mostrarMissatge("Descripció: ");
+        String descripcio= in.nextLine();
+        Producte p = new Producte(nom,preu,codi,marca,descripcio);
         p.afegirProducteBD();
     }
     public void esborrarProducte () throws SQLException {
@@ -83,6 +87,17 @@ public class GestorDades {
         p.mostrarProductaFiltratPerCodi(in.next());
     }
 
+    public void mostrarProductePerMarca() throws SQLException{
+        Producte p = new Producte();
+        Interficie.mostrarMissatge("marca per filtrar:");
+        p.mostrarProductaFiltratPerMarca(in.next());
+    }
+
+    public void mostrarProductePerDescripcio() throws SQLException{
+        Producte p = new Producte();
+        Interficie.mostrarMissatge("descripció per filtrar:");
+        p.mostrarProductaFiltratPerMarca(in.nextLine());
+    }
     public void afegirTreballador() throws SQLException {
         Interficie.mostrarMissatge("Nom: ");
         String nom = in.nextLine();

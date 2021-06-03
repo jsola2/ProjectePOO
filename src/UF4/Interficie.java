@@ -25,7 +25,9 @@ public class Interficie {
                "1- Filtar per nom" + "\n" +
                        "2- Filtrar per preu" + "\n" +
                        "3- Filtrar per codi" + "\n" +
-                       "4- Sense filtrat" + "\n" +
+                       "4- Filtrar per marca" + "\n"+
+                       "5- Filtrar per descripció" + "\n"+
+                       "6- Sense filtrat" + "\n" +
                        "0- Sortir"
        );
    }
@@ -49,21 +51,6 @@ public class Interficie {
                         "5- Sense filtrat" + "\n" +
                         "0- Sortir"
         );
-    }
-
-    public static void DadesIntroduccioTreballador() {
-        System.out.println(
-                "Per favor, introdrueix el nom, el cognom, el DNI del treballador i el número " +
-                        "de la seva categoria, pemi: " + "\n" +
-                        "1 Per empleat/empleada de la neteja" + "\n" +
-                        "2 Per empleat/empleada cambrer" + "\n" +
-                        "3 Per empleat/empleada de bar"
-
-        );
-    }
-
-    public static void EsborrarDadesTreballador (){
-        System.out.println( "Per favor, introdrueix el DNI del treballador que vol esborrar: ");
     }
 
 }

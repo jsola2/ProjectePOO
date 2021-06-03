@@ -9,13 +9,17 @@ public class Producte {
     protected String nom;
     protected float preu;
     protected String codi;
+    protected String marca;
+    protected String descripcio;
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection connexio = connect.getConnection();
 
-    public Producte(String nom , float preu, String codi){
+    public Producte(String nom , float preu, String codi, String marca, String descripcio){
         this.nom = nom;
         this.preu = preu;
         this.codi = codi;
+        this.marca = marca;
+        this.descripcio = descripcio;
     }
 
     public Producte(String codi)  {
@@ -28,18 +32,19 @@ public class Producte {
 
     public void afegirProducteBD () throws SQLException {
         int producte_id = 0;
-        PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?)");
+        PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?,?,?)");
         Statement stmt= connexio.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
 
         while(rs.next()) {
             producte_id = rs.getInt("producte_id");
         }
-
         consulta.setInt(1,producte_id+1);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
         consulta.setString(3,codi);
+        consulta.setString(5,marca);
+        consulta.setString(6,descripcio);
         consulta.executeUpdate();
     }
 
@@ -58,12 +63,17 @@ public class Producte {
         String nom;
         float preu;
         String codi;
+        String marca;
+        String descripcio;
 
         while(rs.next()) {
             nom = rs.getString("nom");
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
-            Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
+
+            Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
         }
 
         connexio.close();
@@ -75,13 +85,17 @@ public class Producte {
         String nom;
         float preu;
         String codi;
+        String marca;
+        String descripcio;
 
         while(rs.next()) {
-                nom = rs.getString("nom");
-                preu = rs.getFloat("preu");
-                codi = rs.getString("codi");
+            nom = rs.getString("nom");
+            preu = rs.getFloat("preu");
+            codi = rs.getString("codi");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
             if (pnom.equalsIgnoreCase( nom)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
             }
         }
 
@@ -94,13 +108,17 @@ public class Producte {
         String nom;
         float preu;
         String codi;
+        String marca;
+        String descripcio;
 
         while(rs.next()) {
             nom = rs.getString("nom");
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
             if (pPreu == preu) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
             }
         }
 
@@ -113,13 +131,63 @@ public class Producte {
         String nom;
         float preu;
         String codi;
+        String marca;
+        String descripcio;
 
         while(rs.next()) {
             nom = rs.getString("nom");
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
             if (pCodi.equals(codi)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+            }
+        }
+
+        connexio.close();
+    }
+
+    public void mostrarProductaFiltratPerMarca(String pMarca) throws SQLException{
+        Statement stmt= connexio.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
+        String nom;
+        float preu;
+        String codi;
+        String marca;
+        String descripcio;
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            preu = rs.getFloat("preu");
+            codi = rs.getString("codi");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
+            if (pMarca.equals(marca)) {
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+            }
+        }
+
+        connexio.close();
+    }
+
+    public void mostrarProductaFiltratPerDescripcio(String pDescripcio) throws SQLException{
+        Statement stmt= connexio.createStatement();
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
+        String nom;
+        float preu;
+        String codi;
+        String marca;
+        String descripcio;
+
+        while(rs.next()) {
+            nom = rs.getString("nom");
+            preu = rs.getFloat("preu");
+            codi = rs.getString("codi");
+            marca = rs.getString("marca");
+            descripcio = rs.getString("descripcio");
+            if (pDescripcio.equals(descripcio)) {
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
             }
         }
 

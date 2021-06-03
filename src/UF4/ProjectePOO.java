@@ -44,6 +44,12 @@ public class ProjectePOO {
                                 gestor.mostrarProductePerCodi();
                                 break;
                             case 4:
+                                gestor.mostrarProductePerMarca();
+                                break;
+                            case 5:
+                                gestor.mostrarProductePerDescripcio();
+                                break;
+                            case 6:
                                 gestor.mostrarProducte();
                                 break;
                             case 0:
