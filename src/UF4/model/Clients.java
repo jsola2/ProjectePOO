@@ -14,19 +14,22 @@ public class Clients extends Persona {
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection s = connect.getConnection();
 
-    public Clients(String nom , String cognoms, String dni, boolean clientVip){
-        super(nom,cognoms,dni);
+    public Clients(String nom , String cognoms, String dni,String poblacio, String adreca, boolean clientVip){
+        super(nom,cognoms,dni,poblacio,adreca);
         this.nom = nom;
         this.cognom = cognoms;
         this.dni = dni;
+        this.poblacio = poblacio;
+        this.adreca = adreca;
         this.clientVip = clientVip;
     }
 
-    public Clients(String nomBorrar, String cognomsBorrar, String dniBorrar)  {
-        super(nomBorrar,cognomsBorrar,dniBorrar);
+    public Clients(String nomBorrar, String cognomsBorrar, String dniBorrar, String poblacioEsborra, String adrecaEsborrar)  {
+        super(nomBorrar,cognomsBorrar,dniBorrar,poblacioEsborra,adrecaEsborrar);
         this.nom = nomBorrar;
         this.cognom = cognomsBorrar;
         this.dni = dniBorrar;
+        this.adreca = adrecaEsborrar;
     }
 
     public Clients() {
@@ -37,7 +40,7 @@ public class Clients extends Persona {
 
     public void afegirClientBD () throws SQLException {
         int client_id = 0;
-        PreparedStatement v = s.prepareStatement("INSERT INTO clients VALUES (?,?,?,?,?)");
+        PreparedStatement v = s.prepareStatement("INSERT INTO clients VALUES (?,?,?,?,?,?,?)");
 
         Statement stmt=s.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM clients");
@@ -50,16 +53,20 @@ public class Clients extends Persona {
         v.setString(3,cognom);
         v.setString(4,dni);
         v.setBoolean(5,clientVip);
+        v.setString(6,poblacio);
+        v.setString(7,adreca);
         v.executeUpdate();
     }
 
     public void borrarClient () throws SQLException {
 
-        PreparedStatement v = s.prepareStatement("DELETE FROM clients WHERE nom = ? AND cognom = ? AND dni = ? ");
+        PreparedStatement v = s.prepareStatement("DELETE FROM clients WHERE nom = ? AND cognom = ? AND dni = ? AND poblacio = ? AND adreca = ?");
 
         v.setString(1,nom);
         v.setString(2,cognom);
         v.setString(3,dni);
+        v.setString(4,poblacio);
+        v.setString(5,adreca);
         v.executeUpdate();
     }
 
@@ -71,13 +78,17 @@ public class Clients extends Persona {
         String cognom;
         String dni;
         boolean clientVip;
+        String poblacio;
+        String adreca;
 
         while(rs.next()) {
             nom = rs.getString("nom");
             cognom = rs.getString("cognom");
             dni = rs.getString("dni");
             clientVip = rs.getBoolean("clientVip");
-            Interficie.mostrarMissatge(nom  + ", " + cognom + ", " + dni + ", " + clientVip);
+            poblacio = rs.getString("poblacio");
+            adreca = rs.getString("adreca");
+            Interficie.mostrarMissatge(nom  + ", " + cognom + ", " + dni + ", " + clientVip + ", " + poblacio + ". " + adreca);
         }
 
         s.close();
@@ -90,6 +101,8 @@ public class Clients extends Persona {
         String cognom;
         String dni;
         boolean clientVip;
+        String poblacio;
+        String adreca;
         String resultat = null;
 
         while(rs.next()) {
@@ -113,6 +126,8 @@ public class Clients extends Persona {
         String cognom;
         String dni;
         boolean clientVip;
+        String poblacio;
+        String adreca;
         String resultat = "";
 
         while(rs.next()) {
@@ -141,7 +156,9 @@ public class Clients extends Persona {
                 "nom='" + nom + '\'' +
                 ", cognom='" + cognom + '\'' +
                 ", dni='" + dni + '\'' +
-                ", clientVip=" + clientVip +
+                ", clientVip=" + clientVip + '\'' +
+                ", poblacio=" + poblacio + '\'' +
+                ", adreca=" + adreca +
                 '}';
     }
 }

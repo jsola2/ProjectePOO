@@ -15,9 +15,13 @@ public class GestorDades {
         String nom = in.nextLine();
         Interficie.mostrarMissatge("Cognom");
         String cognom = in.nextLine();
+        Interficie.mostrarMissatge("Poblacio: ");
+        String poblacio = in.nextLine();
+        Interficie.mostrarMissatge("Adreça: ");
+        String adreca = in.nextLine();
         Interficie.mostrarMissatge("Client Vip?: ");
         boolean clientVip = in.nextBoolean();
-        Clients s = new Clients(nom,cognom,dni,clientVip);
+        Clients s = new Clients(nom,cognom,dni,poblacio,adreca,clientVip);
         s.afegirClientBD();
     }
     public void esborrarClient () throws SQLException {
@@ -27,7 +31,11 @@ public class GestorDades {
         String cognom = in.nextLine();
         Interficie.mostrarMissatge("DNI: ");
         String dni = in.nextLine();
-        Clients s = new Clients(in.nextLine(),in.nextLine(),in.nextLine());
+        Interficie.mostrarMissatge("Poblacio: ");
+        String poblacio = in.nextLine();
+        Interficie.mostrarMissatge("Adreça: ");
+        String adreca = in.nextLine();
+        Clients s = new Clients(in.nextLine(),in.nextLine(),in.nextLine(),in.nextLine(),in.nextLine());
         s.borrarClient();
     }
     public void mostrarClient () throws SQLException{
@@ -82,9 +90,13 @@ public class GestorDades {
         String cognom = in.nextLine();
         Interficie.mostrarMissatge("DNI: ");
         String dni = in.nextLine();
+        Interficie.mostrarMissatge("Poblacio: ");
+        String poblacio = in.nextLine();
+        Interficie.mostrarMissatge("Adreça: ");
+        String adreca = in.nextLine();
         Interficie.mostrarMissatge("Categoria: ");
         int categoria = in.nextInt();
-        Treballador nou = new Treballador(nom, cognom, dni, categoria);
+        Treballador nou = new Treballador(nom, cognom, dni, poblacio, adreca, categoria);
         nou.afegirTreballadorBD();
     }
     public void esborrarTreballador() throws SQLException {

@@ -19,8 +19,8 @@ public class Treballador extends Persona {
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection connexio = connect.getConnection();
 
-    public Treballador(String nom, String cognom, String dni, int cat) {
-        super(nom, cognom, dni);
+    public Treballador(String nom, String cognom, String dni, String poblacio,String adreca, int cat) {
+        super(nom, cognom, dni, poblacio, adreca);
         if (cat == 1) {
             categoria = TipusDempleat.NETEJA;
         } else if (cat == 2) {

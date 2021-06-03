@@ -51,6 +51,20 @@ public class Interficie {
         );
     }
 
+    public static void DadesIntroduccioTreballador() {
+        System.out.println(
+                "Per favor, introdrueix el nom, el cognom, el DNI del treballador i el número " +
+                        "de la seva categoria, pemi: " + "\n" +
+                        "1 Per empleat/empleada de la neteja" + "\n" +
+                        "2 Per empleat/empleada cambrer" + "\n" +
+                        "3 Per empleat/empleada de bar"
+
+        );
+    }
+
+    public static void EsborrarDadesTreballador (){
+        System.out.println( "Per favor, introdrueix el DNI del treballador que vol esborrar: ");
+    }
 
 }
 
