@@ -3,6 +3,7 @@ package UF4.model;
 import java.sql.*;
 
 import UF4.ConectarBaseDades;
+import UF4.Interficie;
 
 enum TipusDempleat {
 
@@ -77,7 +78,7 @@ public class Treballador extends Persona {
             esborrar.setString(1, dni);
             esborrar.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }
@@ -94,10 +95,10 @@ public class Treballador extends Persona {
                 cognom = mostrar.getString("cognom");
                 dni = mostrar.getString("dni");
                 categoria = TipusDempleat.valueOf(mostrar.getString("categoria"));
-                System.out.println(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
             }
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }
@@ -117,11 +118,11 @@ public class Treballador extends Persona {
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
                 if (pnom.equalsIgnoreCase(nom)) {
-                    System.out.println(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }
@@ -143,11 +144,11 @@ public class Treballador extends Persona {
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
                 if (pCognom.equalsIgnoreCase(cognom)) {
-                    System.out.println(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }
@@ -169,11 +170,11 @@ public class Treballador extends Persona {
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
                 if (pDni.equalsIgnoreCase(dni)) {
-                    System.out.println(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }
@@ -195,11 +196,11 @@ public class Treballador extends Persona {
                 dni = rs.getString("dni");
                 categoria = rs.getString("categoria");
                 if (pCategoria.equalsIgnoreCase(categoria)) {
-                    System.out.println(nom + ", " + cognom + ", " + dni + ", " + categoria);
+                    Interficie.mostrarMissatge(nom + ", " + cognom + ", " + dni + ", " + categoria);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error al connectar la base de dades");
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
         }
         connexio.close();
     }

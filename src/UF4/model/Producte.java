@@ -63,7 +63,7 @@ public class Producte {
             nom = rs.getString("nom");
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
-            System.out.println(nom  + ", " + preu + ", " + codi);
+            Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
         }
 
         connexio.close();
@@ -81,7 +81,7 @@ public class Producte {
                 preu = rs.getFloat("preu");
                 codi = rs.getString("codi");
             if (pnom.equalsIgnoreCase( nom)) {
-                System.out.println(nom + ", " + preu + ", " + codi);
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
             }
         }
 
@@ -100,7 +100,7 @@ public class Producte {
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
             if (pPreu == preu) {
-                System.out.println(nom + ", " + preu + ", " + codi);
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
             }
         }
 
@@ -119,7 +119,7 @@ public class Producte {
             preu = rs.getFloat("preu");
             codi = rs.getString("codi");
             if (pCodi.equals(codi)) {
-                System.out.println(nom + ", " + preu + ", " + codi);
+                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "\n");
             }
         }
 
