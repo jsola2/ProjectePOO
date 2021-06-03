@@ -54,24 +54,23 @@ public class Treballador extends Persona {
         PreparedStatement insertar = connexio.prepareStatement("INSERT INTO empleats VALUES (?,?,?,?,?,?,?)");
 
 
-        ResultSet resultat = stmt.executeQuery("SELECT * FROM empleats");
+        ResultSet resultat = stmt.executeQuery("SELECT * FROM empleats ORDER BY empleat_id DESC ");
+        resultat.next();
+        empleat_id = resultat.getInt("empleat_id");
 
-        while (resultat.next()) {
-            empleat_id = resultat.getInt("empleat_id");
 
-        }
         insertar.setInt(1, empleat_id + 1);
         insertar.setString(2, nom);
         insertar.setString(3, cognom);
         insertar.setString(4, dni);
         insertar.setString(5, String.valueOf(categoria));
-        insertar.setString(6,poblacio);
-        insertar.setString(6,adreca);
+        insertar.setString(6, poblacio);
+        insertar.setString(7, adreca);
         insertar.executeUpdate();
 
         connexio.close();
-    }
 
+    }
     public void esborrarTreballadorBD() throws SQLException {
         try {
 

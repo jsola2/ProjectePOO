@@ -110,7 +110,8 @@ public class Clients extends Persona {
             cognom = rs.getString("cognom");
             dni = rs.getString("dni");
             clientVip = rs.getBoolean("clientVip");
-
+            poblacio = rs.getString("poblacio");
+            adreca = rs.getString("adreca");
             if (nomClient.equals(nom) && dni.equals(dniClient)){
                 resultat = (nom  + ", " + cognom + ", " + dni + ", " + clientVip);
             }
@@ -135,6 +136,8 @@ public class Clients extends Persona {
             cognom = rs.getString("cognom");
             dni = rs.getString("dni");
             clientVip = rs.getBoolean("clientVip");
+            poblacio = rs.getString("poblacio");
+            adreca = rs.getString("adreca");
 
             if (clientVip){
                 resultat = (nom  + ", " + cognom + ", " + dni + ", " + clientVip) + "\n" + resultat;
