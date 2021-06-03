@@ -34,11 +34,9 @@ public class Producte {
         int producte_id = 0;
         PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?,?,?)");
         Statement stmt= connexio.createStatement();
-        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
-
-        while(rs.next()) {
-            producte_id = rs.getInt("producte_id");
-        }
+        ResultSet rs=stmt.executeQuery("SELECT * FROM productes ORDER BY producte_id DESC ");
+        rs.next();
+        producte_id = rs.getInt("producte_id");
         consulta.setInt(1,producte_id+1);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
@@ -73,7 +71,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
 
-            Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+            Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
         }
 
         connexio.close();
@@ -95,7 +93,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
             if (pnom.equalsIgnoreCase( nom)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+                Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
             }
         }
 
@@ -118,7 +116,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
             if (pPreu == preu) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+                Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
             }
         }
 
@@ -141,7 +139,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
             if (pCodi.equals(codi)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+                Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
             }
         }
 
@@ -164,7 +162,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
             if (pMarca.equals(marca)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+                Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
             }
         }
 
@@ -187,7 +185,7 @@ public class Producte {
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
             if (pDescripcio.equals(descripcio)) {
-                Interficie.mostrarMissatge(nom  + ", " + preu + ", " + codi + "," + marca + descripcio +  "\n");
+                Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
             }
         }
 

@@ -53,6 +53,7 @@ public class GestorDades {
         Interficie.mostrarMissatge("Marca: ");
         String marca = in.next();
         Interficie.mostrarMissatge("Descripció: ");
+        in.nextLine();
         String descripcio= in.nextLine();
         Producte p = new Producte(nom,preu,codi,marca,descripcio);
         p.afegirProducteBD();
