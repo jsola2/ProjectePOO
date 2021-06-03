@@ -34,11 +34,9 @@ public class Producte {
         int producte_id = 0;
         PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?,?,?)");
         Statement stmt= connexio.createStatement();
-        ResultSet rs=stmt.executeQuery("SELECT * FROM productes");
-
-        while(rs.next()) {
-            producte_id = rs.getInt("producte_id");
-        }
+        ResultSet rs=stmt.executeQuery("SELECT * FROM clients ORDER BY client_id DESC ");
+        rs.next();
+        producte_id = rs.getInt("producte_id");
         consulta.setInt(1,producte_id+1);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
