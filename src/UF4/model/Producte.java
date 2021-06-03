@@ -36,7 +36,7 @@ public class Producte {
         Statement stmt= connexio.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM clients ORDER BY client_id DESC ");
         rs.next();
-        producte_id = rs.getInt("client_id");
+        producte_id = rs.getInt("producte_id");
         consulta.setInt(1,producte_id+1);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
