@@ -12,16 +12,17 @@ public class ConectarBaseDades {
 
 
     public ConectarBaseDades() {
+
         conn = null;
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, user, password);
             if (conn != null) {
-                System.out.println("Conexio de la base de dades establerta");
+                System.out.println("Connexió de la base de dades establerta");
             }
 
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error al concectar " + e);
+            System.out.println("Error al connectar " + e);
         }
     }
 
@@ -35,7 +36,7 @@ public class ConectarBaseDades {
     public void deconectar() {
         conn = null;
         if (conn == null) {
-            System.out.println("Conecion tancada...");
+            System.out.println("Connexió tancada...");
         }
     }
 }

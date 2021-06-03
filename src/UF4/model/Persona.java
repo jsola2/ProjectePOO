@@ -13,4 +13,8 @@ public class Persona {
     }
 
     public Persona() { }
+
+    public Persona(String dni) {
+        this.dni = dni;
+    }
 }

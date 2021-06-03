@@ -36,11 +36,11 @@ public class Interficie {
 
     public static void mostarSubMenuClients(){
         System.out.println(
-                """
-                1- Filtar per nom i dni
-                2- Mostrar nomes clients Vip
-                3- Sense filtrat
-                0- Sortir"""
+
+                "1- Filtar per nom i dni" + "\n" +
+                "2- Mostrar nomes clients Vip" + "\n" +
+                "3- Sense filtrat" + "\n" +
+                "0- Sortir"
         );
     }
 
