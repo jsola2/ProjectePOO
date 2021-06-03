@@ -82,7 +82,7 @@ public class GestorDades {
         p.mostrarProductaFiltratPerPreu(in.nextFloat());
     }
 
-    public void mostrarProductePerCodi () throws SQLException{
+    public void mostrarProductePerCodi() throws SQLException{
         Producte p = new Producte();
         Interficie.mostrarMissatge("codi per filtrar:");
         p.mostrarProductaFiltratPerCodi(in.next());
