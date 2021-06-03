@@ -97,7 +97,7 @@ public class GestorDades {
     public void mostrarProductePerDescripcio() throws SQLException{
         Producte p = new Producte();
         Interficie.mostrarMissatge("descripció per filtrar:");
-        p.mostrarProductaFiltratPerMarca(in.nextLine());
+        p.mostrarProductaFiltratPerDescripcio(in.nextLine());
     }
     public void afegirTreballador() throws SQLException {
         Interficie.mostrarMissatge("Nom: ");
