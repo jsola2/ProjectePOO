@@ -1,10 +1,21 @@
 package UF4;
 
+/**
+ *Aquesta classe és l'encarregada de mostrar tots els missatges perquè l'experiència d'usuari sigui bona. També estan les opcions del nostre menú i sub menú.
+ */
 public class Interficie {
+
+    /**
+     * Aquesta funció serveix per mostrar tots els missatges que és passa per paràmetre.
+     * @param missatge passem el misstatge per parametre
+     */
     public static void mostrarMissatge (String missatge){
         System.out.println(missatge);
     }
 
+    /**
+     *Aquesta funció serveix per mostrar la part principal del menú
+     */
     public static void mostrarMenu(){
         System.out.println(
                 "1- Afegir producte" + "\n" +
@@ -20,7 +31,10 @@ public class Interficie {
         );
     }
 
-   public static void mostarSubMenuProductes(){
+    /**
+     *Aquesta funció serveix per mostrar el menú de productes.
+     */
+    public static void mostarSubMenuProductes(){
        System.out.println(
                "1- Filtar per nom" + "\n" +
                        "2- Filtrar per preu" + "\n" +
@@ -32,6 +46,9 @@ public class Interficie {
        );
    }
 
+    /**
+     *Aquesta funció serveix per mostrar el menú de Clients.
+     */
     public static void mostarSubMenuClients(){
         System.out.println(
 
@@ -42,6 +59,9 @@ public class Interficie {
         );
     }
 
+    /**
+     *Aquesta funció serveix per mostrar el menú d'Empleats.
+     */
     public static void mostarSubMenuEmpleats(){
         System.out.println(
                 "1- Filtar per nom" + "\n" +

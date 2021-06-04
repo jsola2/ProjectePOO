@@ -2,8 +2,15 @@ package UF4;
 
 import java.sql.*;
 
+/**
+ * En la classe base de dades tracta de connectar el Java o millor dit, el codi Java al MySQL.
+ * Com podem veure declarem variables estàtiques perquè el codi més net.
+ */
 public class ConectarBaseDades {
 
+    /**
+     * Varables estatiques
+     */
     private static Connection conn;
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String user = "perepi";
@@ -11,6 +18,9 @@ public class ConectarBaseDades {
     private static final String url = "jdbc:mysql://database-3.c4sehtssjxjr.us-east-1.rds.amazonaws.com/pub";
 
 
+    /**
+     * En aquest mètode el que faig és declarar una variable la qual hi ha de connectar-se a la base de dades perquè no sigui null. Si és null llavors saltarà un error.
+     */
     public ConectarBaseDades() {
 
         conn = null;
@@ -27,16 +37,18 @@ public class ConectarBaseDades {
     }
 
 
-    //este metodo nos retorna la conexion
+    /**
+     * Es el metode que ens retorna la connexió
+     * @return retorna la connexió
+     */
     public Connection getConnection() {
         return conn;
     }
-
-    //con este metodo nos desconectamos de la base de dades
+    /**
+     * Amb aquest metode podem desconectarnos de la base de dades
+     */
     public void deconectar() {
         conn = null;
-        if (conn == null) {
-            Interficie.mostrarMissatge("Connexió tancada...");
-        }
+        Interficie.mostrarMissatge("Connexió tancada...");
     }
 }
