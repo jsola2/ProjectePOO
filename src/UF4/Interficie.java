@@ -4,9 +4,7 @@ package UF4;
  *Aquesta classe és l'encarregada de mostrar tots els missatges perquè l'experiència d'usuari sigui bona. També estan les opcions del nostre menú i sub menú.
  */
 public class Interficie {
-    public  Interficie(){
-
-    }
+    public  Interficie(){ }
     /**
      * Aquesta funció serveix per mostrar tots els missatges que és passa per paràmetre.
      *

@@ -117,8 +117,9 @@ public class Treballador extends Persona {
     }
 
     /**
-     * 7
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els treballadors de la base de dades.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades i després les printem gràcies a la funció Interficie.
      */
     public void mostrarTreballadorBD() throws SQLException {
         try {
@@ -143,9 +144,11 @@ public class Treballador extends Persona {
     }
 
     /**
-     *
-     * @param pnom
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els treballadors de la base de dades filtrats per nom
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pnom l'utilitzem per filtrar.
      */
     public void mostrarTreballadorPerNom(String pnom) throws SQLException {
         try {
@@ -176,9 +179,11 @@ public class Treballador extends Persona {
     }
 
     /**
-     *
-     * @param pCognom
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els treballadors de la base de dades filtrats per cognom.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pCognom l'utilitzem per cognom
      */
     public void mostrarTreballadorCognom(String pCognom) throws SQLException {
         try {
@@ -211,14 +216,14 @@ public class Treballador extends Persona {
     }
 
     /**
-     *
-     * @param pDni
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els treballadors de la base de dades filtrats per DNI.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pDni l'utilitzem per filtrar
      */
     public void mostrarTreballadorPerDni(String pDni) throws SQLException {
         try {
-
-
             Statement stmt = connexio.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM empleats");
             String nom;
@@ -246,9 +251,11 @@ public class Treballador extends Persona {
     }
 
     /**
-     *
-     * @param pCategoria
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els categoria de la base de dades filtrats per categoria.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pCategoria l'utilitzem per filtrar
      */
     public void mostrarTreballadorPerCategoria(String pCategoria) throws SQLException {
         try {
