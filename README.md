@@ -137,3 +137,53 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 <p>La classe "ConectarBaseDades" a estat creada per en Bangal, a on està el codi de connexió amb la base de dades, també s'ha encarregat de la classe "Client", creant els seus constructors, funcions i metodes, creats a la classe GestorDades. La classe Producte la creat en Ruben amb tot el que inclou, ha creat dins de la classe Interficie els missatges de menú principal i submenús. Per últim, en Jaime a creat la classe Treballador creant una classe enum anomenada TipusDempleatper repartir amb tots els treballadors les seves categories dintre de la gestió de l'empresa, totes les classes tenen de cin a set atributs, amb herencia anomenada Persona que importa gran dels atributs de Client i Treballador.</p>
 
 <p>Hem tingut diversos problemes amb el moviment entre branques, ja que es la primera vegada que l'implementem a un projecte, l'hem estat solucionan recolsant-nos entre els 3, pregunatant al principi, avanç de fer un push o un pull. També, hem tingut algún problema amb la base de dades i la simple implementació del codi, sent solucionat amb el recolse de l'equip.</p>
+
+<h3>UML</h3>
+
+<h4>Diagrames de clases:</h4>
+
+<h5>Versió 1:</h5>
+
+![image](https://user-images.githubusercontent.com/76974332/120839105-d5d97100-c568-11eb-9f77-82319fbd9622.png)
+
+
+<h5>Versió 2:</h5>
+
+![image](https://user-images.githubusercontent.com/76974332/120838073-b55ce700-c567-11eb-84df-7e3695a605f6.png)
+
+<h6>Explicació de Canvis respecte a la versió 1:</h6>
+
+<p>He creat la classe persona, per fer herència de clients i treballadors, després tenim la classe pub que té una relació composta amb persona.
+
+De la relació entre clients i treballadors surt la classe comanda on guardem les comandes que fa cada treballador i la data en la qual la fa.
+
+Després tenim la classe GestorDades que gestiona les classes Client, Producte i Treballadors i d'aquesta classe amb les seves funcions, la classe ProjectePOO (on tenim tot el menú) agafarà les funcions de la classe GestorDades i també agafa les funcions de la classe Interfície per printar menú i submenús.
+
+La classe Treballador té la seva Interfície i un enum per als tipus d'empleats.
+
+I per últim, tenim la classe ConectarBaseDades per a poder connectar les classes Client, Producte i Treballadors a la base de dades.
+</p>
+
+<h4>Diagrama de Casos d’Ús: </h4>
+
+![image](https://user-images.githubusercontent.com/76974332/120838531-32885c00-c568-11eb-9d77-36361a9d8030.png)
+
+<h5>Documentació de cada cas d’ús: </h5>
+
+![image](https://user-images.githubusercontent.com/76974332/120837125-a295e280-c566-11eb-8d3f-717247517197.png)
+
+![image](https://user-images.githubusercontent.com/76974332/120838638-52b81b00-c568-11eb-8dce-7d1315070d82.png)
+
+![image](https://user-images.githubusercontent.com/76974332/120838666-5a77bf80-c568-11eb-9e6c-a31e522e9205.png)
+
+![image](https://user-images.githubusercontent.com/76974332/120838686-606da080-c568-11eb-8ac9-0b17a0d41370.png)
+
+![5](https://user-images.githubusercontent.com/76974332/120839225-f99cb700-c568-11eb-80e4-a53291ec1c58.png)
+
+![6](https://user-images.githubusercontent.com/76974332/120838724-6fece980-c568-11eb-9530-7fec90efc612.png)
+
+![7](https://user-images.githubusercontent.com/76974332/120838753-79765180-c568-11eb-9488-da16653f3cff.png)
+
+![8](https://user-images.githubusercontent.com/76974332/120838788-84c97d00-c568-11eb-9faa-3fd3468030cd.png)
+
+![9](https://user-images.githubusercontent.com/76974332/120838826-8bf08b00-c568-11eb-9c5d-53d181f5e9ef.png)
