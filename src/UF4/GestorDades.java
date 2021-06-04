@@ -190,36 +190,56 @@ public class GestorDades {
      */
     public void mostrarTreballadorPerNom () throws SQLException{
         Scanner in = new Scanner(System.in);
-        Treballador t = new Treballador();
+        Treballador mostrarNom = new Treballador();
         Interficie.mostrarMissatge("nom per filtrar:");
-        t.mostrarTreballadorPerNom(in.next());
+        mostrarNom.mostrarTreballadorPerNom(in.next());
     }
 
     /**
      * En aquesta funció podem veure que té gairebé la mateixa funcionalitat que la funció mostrarTreballador() però amb la diferència de què aquesta funció filtra els treballadors per el cognom .
      */
     public void mostrarTreballadorCognom () throws SQLException{
-        Treballador t = new Treballador();
+        Treballador mostrarCognom = new Treballador();
         Interficie.mostrarMissatge("cognom per filtrar:");
-        t.mostrarTreballadorCognom(in.next());
+        mostrarCognom.mostrarTreballadorCognom(in.next());
     }
 
     /**
      * En aquesta funció podem veure que té gairebé la mateixa funcionalitat que la funció mostrarTreballador() però amb la diferència de què aquesta funció filtra els treballadors per el dni .
      */
     public void mostrarTreballadorPerDni () throws SQLException{
-        Treballador t = new Treballador();
+        Treballador mostrarDni = new Treballador();
         Interficie.mostrarMissatge("dni per filtrar:");
-        t.mostrarTreballadorPerDni(in.next());
+        mostrarDni.mostrarTreballadorPerDni(in.next());
     }
 
     /**
      * En aquesta funció podem veure que té gairebé la mateixa funcionalitat que la funció mostrarTreballador() però amb la diferència de què aquesta funció filtra els treballadors per categora .
      */
     public void mostrarTreballadorPerCategoria () throws SQLException{
-        Treballador t = new Treballador();
-        Interficie.mostrarMissatge("categoria per filtrar:");
-        t.mostrarTreballadorPerCategoria(in.next());
+        Treballador mostrarCategoria = new Treballador();
+        Interficie.mostrarMissatge("Categoria per filtrar:");
+        mostrarCategoria.mostrarTreballadorPerCategoria(in.next());
+
+
+    }
+
+    /**
+     * En aquesta funció podrem filtrar per població dels treballadors de la empresa.
+     */
+    public void mostrarTreballadorPerPoblacio () throws SQLException{
+        Treballador mostrarCategoria = new Treballador();
+        Interficie.mostrarMissatge("Població per filtrar:");
+        mostrarCategoria.mostrarTreballadorPerPoblacio(in.nextLine());
+    }
+
+    /**
+     * Aquesta funció es filtraran tots els treballadors per adreça.
+     */
+    public void mostrarTreballadorPerAdreca () throws SQLException{
+        Treballador mostrarAdreca = new Treballador();
+        Interficie.mostrarMissatge("Adreça per filtrar:");
+        mostrarAdreca.mostrarTreballadorPerAdreca(in.nextLine());
     }
 
     /**

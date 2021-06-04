@@ -67,11 +67,14 @@ public class ProjectePOO {
                             case 2: gestor.mostrarTreballadorCognom();break;
                             case 3: gestor.mostrarTreballadorPerDni();break;
                             case 4: gestor.mostrarTreballadorPerCategoria();break;
-                            case 5: gestor.mostrarTreballador();break;
+                            case 5: gestor.mostrarTreballadorPerPoblacio();break;
+                            case 6: gestor.mostrarTreballadorPerAdreca();break;
+                            case 7: gestor.mostrarTreballador();break;
                             case 0: fiSubmenuTreballador = true;
                         }
                     }break;
-                case 0: fimenu = true;break;
+                case 0: fimenu = true;
+                Interficie.mostrarMissatge("Gràcies per ultitzar BRJ©, que vagi bé!");break;
             }
         }
     }

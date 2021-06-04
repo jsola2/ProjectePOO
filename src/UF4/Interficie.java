@@ -70,7 +70,9 @@ public class Interficie {
                         "2- Filtrar per cognom" + "\n" +
                         "3- Filtrar per DNI" + "\n" +
                         "4- Filtrar per categoria" + "\n" +
-                        "5- Sense filtrat" + "\n" +
+                        "5- Filtrar per població" + "\n" +
+                        "6- Filtrar per adreça" + "\n" +
+                        "7- Sense filtrat" + "\n" +
                         "0- Sortir"
         );
     }

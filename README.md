@@ -83,6 +83,8 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 
 <h4>I per finalitzar, anirem a la part d'afegir, esborrar i mostrar els nostres Empleats.</h4>
 <p>A la opció 7 del menú principal, tenim la part d'afegir un treballador: </p>
+
+
 <p></p>
 <p></p>
 <p></p>

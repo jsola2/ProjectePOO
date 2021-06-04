@@ -287,4 +287,77 @@ public class Treballador extends Persona {
         connexio.close();
     }
 
+    /**
+     * Funcio que te tots els mecanismes per poder filtrar per població introduint-la per parametre.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pPoblacio variable introduida per parametre
+     */
+    public void mostrarTreballadorPerPoblacio(String pPoblacio) throws SQLException{
+        try {
+
+
+            Statement stmt = connexio.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM empleats");
+            String nom;
+            String cognom;
+            String dni;
+            String categoria;
+            String poblacio;
+            String adreca;
+
+            while (rs.next()) {
+                nom = rs.getString("nom");
+                cognom = rs.getString("cognom");
+                dni = rs.getString("dni");
+                categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
+                if (pPoblacio.equalsIgnoreCase(poblacio)) {
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                }
+            }
+        } catch (Exception e) {
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
+        }
+        connexio.close();
+    }
+
+    /**
+     * Aquesta finció serveix per que es pugui filtrar per adreça, introduïnt aquesta per parametre.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el client que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pAdreca variable introduïda per parametre.
+     */
+    public void mostrarTreballadorPerAdreca(String pAdreca) throws SQLException {
+        try {
+
+
+            Statement stmt = connexio.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM empleats");
+            String nom;
+            String cognom;
+            String dni;
+            String categoria;
+            String poblacio;
+            String adreca;
+
+            while (rs.next()) {
+                nom = rs.getString("nom");
+                cognom = rs.getString("cognom");
+                dni = rs.getString("dni");
+                categoria = rs.getString("categoria");
+                poblacio = rs.getString("poblacio");
+                adreca = rs.getString("adreca");
+                if (pAdreca.equalsIgnoreCase(adreca)) {
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                }
+            }
+        } catch (Exception e) {
+            Interficie.mostrarMissatge("Error al connectar la base de dades");
+        }
+        connexio.close();
+    }
 }
