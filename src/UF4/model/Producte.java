@@ -80,7 +80,6 @@ public class Producte implements ProducteInterficie {
     public void borrarProducte() throws SQLException {
 
         PreparedStatement consulta = connexio.prepareStatement("DELETE FROM productes WHERE codi = ? ");
-
         consulta.setString(1,codi);
         consulta.executeUpdate();
     }
@@ -100,6 +99,7 @@ public class Producte implements ProducteInterficie {
         String codi;
         String marca;
         String descripcio;
+        String resultat = "";
 
         while(rs.next()) {
             nom = rs.getString("nom");
@@ -107,9 +107,9 @@ public class Producte implements ProducteInterficie {
             codi = rs.getString("codi");
             marca = rs.getString("marca");
             descripcio = rs.getString("descripcio");
-
-            Interficie.mostrarMissatge(" Nom: " + nom  + ", " + " preu: " + preu + ", "+ " codi: " + codi + ", " + " marca: "+ marca +", "+ " descripció: "+ descripcio +  "\n");
+            resultat = ("Nom: " +nom + "\tPreu: " + preu+ "\tCodi: " + codi+ "\tMarca: "+ marca+ "\tDescripcio: " +descripcio) + "\n" + resultat;
         }
+        Interficie.mostrarMissatge(resultat);
 
         connexio.close();
     }

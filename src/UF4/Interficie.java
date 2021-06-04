@@ -11,7 +11,7 @@ public class Interficie {
      * @param missatge passem el misstatge per parametre
      */
     public void mostrarMissatge(String missatge) {
-        System.out.println(missatge);
+        System.out.printf("%-15s\n",missatge);
     }
 
     /**
