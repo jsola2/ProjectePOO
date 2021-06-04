@@ -152,15 +152,12 @@ public class GestorDades {
         Interficie.mostrarMissatge("Nom: ");
         String nom = in.nextLine();
         Interficie.mostrarMissatge("Cognom: ");
-        in.nextLine();
         String cognom = in.nextLine();
         Interficie.mostrarMissatge("DNI: ");
-        String dni = in.next();
+        String dni = in.nextLine();
         Interficie.mostrarMissatge("Poblacio: ");
-        in.nextLine();
         String poblacio = in.nextLine();
         Interficie.mostrarMissatge("Adreça: ");
-        in.nextLine();
         String adreca = in.nextLine();
         Interficie.mostrarMissatge("Categoria: ");
         int categoria = in.nextInt();
