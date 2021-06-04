@@ -168,7 +168,7 @@ public class Clients extends Persona {
 
             if (nomClient.equals(nom) && dni.equals(dniClient)){
                 resultat = ("Nom: " + nom  + ", " + "Cognom: " +cognom + ", " + "Dni: " + dni + ", " + "Client Vip: " + clientVip +
-                        ", " + "Poblacio: " + poblacio + ", " + "Adreça: " +adreca);
+                        ", " + "Poblacio: " + poblacio + ", " + "Adreça: " + adreca);
             }
         }
         Interficie.mostrarMissatge(Objects.requireNonNullElse(resultat, "No s'ha trobat el client"));

@@ -32,7 +32,7 @@ public class GestorDades {
         String poblacio = in.nextLine();
         Interficie.mostrarMissatge("Adreça: ");
         String adreca = in.nextLine();
-        Interficie.mostrarMissatge("Client Vip?: ");
+        Interficie.mostrarMissatge("Client Vip (Si) o (No)?: ");
         boolean clientVip = in.nextBoolean();
         in.nextLine();
         Clients newClient = new Clients(nom,cognom,dni,poblacio,adreca,clientVip);
@@ -68,9 +68,9 @@ public class GestorDades {
     public void afegirProducte () throws SQLException {
         Interficie.mostrarMissatge("Nom: ");
         String nom = in.nextLine();
-        Interficie.mostrarMissatge("preu: ");
+        Interficie.mostrarMissatge("Preu: ");
         float preu= in.nextFloat();
-        Interficie.mostrarMissatge("codi: ");
+        Interficie.mostrarMissatge("Codi: ");
         String codi = in.next();
         Interficie.mostrarMissatge("Marca: ");
         String marca = in.next();
@@ -86,7 +86,7 @@ public class GestorDades {
      */
     public void esborrarProducte () throws SQLException {
         Scanner in = new Scanner(System.in);
-        Interficie.mostrarMissatge("codi: ");
+        Interficie.mostrarMissatge("Codi: ");
         String codi = in.next();
         Producte p = new Producte(codi);
         p.borrarProducte();
@@ -105,7 +105,7 @@ public class GestorDades {
      */
     public void mostrarProductePerNom () throws SQLException{
         Producte p = new Producte();
-        Interficie.mostrarMissatge("nom per filtrar:");
+        Interficie.mostrarMissatge("Nom per filtrar:");
         p.mostrarProductaFiltratPerNom(in.next());
     }
 
@@ -115,7 +115,7 @@ public class GestorDades {
      */
     public void mostrarProductePerPreu () throws SQLException{
         Producte p = new Producte();
-        Interficie.mostrarMissatge("preu per filtrar:");
+        Interficie.mostrarMissatge("Preu per filtrar:");
         p.mostrarProductaFiltratPerPreu(in.nextFloat());
     }
 
@@ -124,7 +124,7 @@ public class GestorDades {
      */
     public void mostrarProductePerCodi () throws SQLException{
         Producte p = new Producte();
-        Interficie.mostrarMissatge("codi per filtrar:");
+        Interficie.mostrarMissatge("Codi per filtrar:");
         p.mostrarProductaFiltratPerCodi(in.next());
     }
 
@@ -133,7 +133,7 @@ public class GestorDades {
      */
     public void mostrarProductePerMarca() throws SQLException{
         Producte p = new Producte();
-        Interficie.mostrarMissatge("marca per filtrar:");
+        Interficie.mostrarMissatge("Marca per filtrar:");
         p.mostrarProductaFiltratPerMarca(in.next());
     }
 

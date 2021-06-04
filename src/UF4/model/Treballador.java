@@ -137,7 +137,7 @@ public class Treballador extends Persona {
                 categoria = TipusDempleat.valueOf(mostrar.getString("categoria"));
                 poblacio = mostrar.getString("poblacio");
                 adreca = mostrar.getString("adreca");
-                Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
             }
         } catch (Exception e) {
             Interficie.mostrarMissatge("Error al connectar la base de dades");
@@ -171,7 +171,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pnom.equalsIgnoreCase(nom)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + " Població: " + poblacio + " Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Població: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
