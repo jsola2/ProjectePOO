@@ -37,4 +37,9 @@ public class Persona {
 
     public Persona() { }
 
+    public Persona(String nom, String cognom, String dni) {
+        this.nom = nom;
+        this.cognom = cognom;
+        this.dni = dni;
+    }
 }

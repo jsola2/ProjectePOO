@@ -45,15 +45,13 @@ public class Clients extends Persona {
      * @param nomBorrar insertem el nom del client per després poder esborrar-lo
      * @param cognomsBorrar insertem el cognom del client per després poder esborrar-lo
      * @param dniBorrar insertem el dni del client per després poder esborrar-lo
-     * @param poblacioEsborra insertem la poblacio del client per després poder esborrar-lo
-     * @param adrecaEsborrar insertem el l'adreça del client per després poder esborrar-lo
      */
-    public Clients(String nomBorrar, String cognomsBorrar, String dniBorrar, String poblacioEsborra, String adrecaEsborrar)  {
-        super(nomBorrar,cognomsBorrar,dniBorrar,poblacioEsborra,adrecaEsborrar);
+    public Clients(String nomBorrar, String cognomsBorrar, String dniBorrar)  {
+        super(nomBorrar,cognomsBorrar,dniBorrar);
         this.nom = nomBorrar;
         this.cognom = cognomsBorrar;
         this.dni = dniBorrar;
-        this.adreca = adrecaEsborrar;
+
     }
 
     /**
@@ -83,9 +81,9 @@ public class Clients extends Persona {
         int client_id = rs.getInt("client_id");
 
         consulta.setInt(1,client_id+1);
-        consulta.setString(2,nom);
-        consulta.setString(3,cognom);
-        consulta.setString(4,dni);
+        consulta.setString(2,dni);
+        consulta.setString(3,nom);
+        consulta.setString(4,cognom);
         consulta.setBoolean(5,clientVip);
         consulta.setString(6,poblacio);
         consulta.setString(7,adreca);
@@ -100,13 +98,11 @@ public class Clients extends Persona {
      */
     public void borrarClient () throws SQLException {
 
-        PreparedStatement consulta = connexio.prepareStatement("DELETE FROM clients WHERE nom = ? AND cognom = ? AND dni = ? AND poblacio = ? AND adreca = ?");
+        PreparedStatement consulta = connexio.prepareStatement("DELETE FROM clients WHERE nom = ? AND cognom = ? AND dni = ?");
 
         consulta.setString(1,nom);
         consulta.setString(2,cognom);
         consulta.setString(3,dni);
-        consulta.setString(4,poblacio);
-        consulta.setString(5,adreca);
         consulta.executeUpdate();
         connect.deconectar();
     }

@@ -21,12 +21,12 @@ public class GestorDades {
      * gràcies a la funció afegirClientBD() podem afegir el nou objecte client a la base de dades.
      */
     public void afegirClient () throws SQLException {
-        Interficie.mostrarMissatge("Dni: ");
-        String dni = in.nextLine();
         Interficie.mostrarMissatge("Nom: ");
         String nom = in.nextLine();
         Interficie.mostrarMissatge("Cognom");
         String cognom = in.nextLine();
+        Interficie.mostrarMissatge("Dni: ");
+        String dni = in.nextLine();
         Interficie.mostrarMissatge("Poblacio: ");
         String poblacio = in.nextLine();
         Interficie.mostrarMissatge("Adreça: ");
@@ -48,11 +48,8 @@ public class GestorDades {
         String cognom = in.nextLine();
         Interficie.mostrarMissatge("DNI: ");
         String dni = in.nextLine();
-        Interficie.mostrarMissatge("Poblacio: ");
-        String poblacio = in.nextLine();
-        Interficie.mostrarMissatge("Adreça: ");
-        String adreca = in.nextLine();
-        Clients newClient = new Clients(nom,cognom,dni,poblacio,adreca);
+
+        Clients newClient = new Clients(nom,cognom,dni);
         newClient.borrarClient();
     }
 
@@ -145,7 +142,7 @@ public class GestorDades {
     public void mostrarProductePerDescripcio() throws SQLException{
         Producte p = new Producte();
         Interficie.mostrarMissatge("descripció per filtrar:");
-        p.mostrarProductaFiltratPerMarca(in.nextLine());
+        p.mostrarProductaFiltratPerMarca(in.next());
     }
 
     /**
@@ -155,12 +152,15 @@ public class GestorDades {
         Interficie.mostrarMissatge("Nom: ");
         String nom = in.nextLine();
         Interficie.mostrarMissatge("Cognom: ");
+        in.nextLine();
         String cognom = in.nextLine();
         Interficie.mostrarMissatge("DNI: ");
-        String dni = in.nextLine();
+        String dni = in.next();
         Interficie.mostrarMissatge("Poblacio: ");
+        in.nextLine();
         String poblacio = in.nextLine();
         Interficie.mostrarMissatge("Adreça: ");
+        in.nextLine();
         String adreca = in.nextLine();
         Interficie.mostrarMissatge("Categoria: ");
         int categoria = in.nextInt();
