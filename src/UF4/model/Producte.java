@@ -8,7 +8,7 @@ import java.sql.*;
  *La classe Producte és la classe on es gestionen els constructors necessaris per implementar les funcionalitats que necessitem,
  * i també conté les funcions que ens permeten fer les consultes que nosaltres volem.
  */
-public class Producte {
+public class Producte implements ProducteInterficie {
     protected String nom;
     protected float preu;
     protected String codi;
@@ -55,7 +55,8 @@ public class Producte {
      * Després gràcies al @Set posem l'índex del paràmetre i els valors que hem passat per paràmetre en el constructor.
      * I per últim fem un executeUpdate().
      */
-    public void afegirProducteBD () throws SQLException {
+    @Override
+    public void afegirProducteBD() throws SQLException {
         PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?,?,?)");
         Statement stmt= connexio.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM productes ORDER BY producte_id DESC ");
@@ -75,7 +76,8 @@ public class Producte {
      *Primer de tot el que fem és declarar els paràmetres que necessitàrem per fer l'insert a la taula gràcies al @PreparedStatement.
      *Després gràcies al @Set posem l'índex del paràmetre i els valors que hem passat per paràmetre en el constructor, i per últim fem un executeUpdate().
      */
-    public void borrarProducte () throws SQLException {
+    @Override
+    public void borrarProducte() throws SQLException {
 
         PreparedStatement consulta = connexio.prepareStatement("DELETE FROM productes WHERE codi = ? ");
 
@@ -88,6 +90,7 @@ public class Producte {
      * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades.
      * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades i després les printem gràcies a la funció Interficie.
      */
+    @Override
     public void mostrarProducteBD() throws SQLException {
 
         Statement stmt= connexio.createStatement();
