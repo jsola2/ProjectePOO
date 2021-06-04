@@ -64,7 +64,9 @@ public class Treballador extends Persona {
                 "nom='" + nom + '\'' +
                 ", cognom='" + cognom + '\'' +
                 ", dni='" + dni + '\'' +
-                ", categoria=" + categoria +
+                ", categoria=" + categoria + '\'' +
+                ", poblacio='" + poblacio + '\'' +
+                ", adreca='" + adreca +
                 '}';
     }
 
@@ -169,7 +171,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pnom.equalsIgnoreCase(nom)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + " Població: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -206,7 +208,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pCognom.equalsIgnoreCase(cognom)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -241,7 +243,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pDni.equalsIgnoreCase(dni)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -278,7 +280,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pCategoria.equalsIgnoreCase(categoria)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -315,7 +317,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pPoblacio.equalsIgnoreCase(poblacio)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
@@ -334,7 +336,6 @@ public class Treballador extends Persona {
     public void mostrarTreballadorPerAdreca(String pAdreca) throws SQLException {
         try {
 
-
             Statement stmt = connexio.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM empleats");
             String nom;
@@ -352,7 +353,7 @@ public class Treballador extends Persona {
                 poblacio = rs.getString("poblacio");
                 adreca = rs.getString("adreca");
                 if (pAdreca.equalsIgnoreCase(adreca)) {
-                    Interficie.mostrarMissatge("Nom: " + nom + ", " + "Cognom: " + cognom + ", " + "DNI: " + dni + ", " + "Categoria: " + categoria + "Poblacio: " + poblacio + "Adreça: " + adreca);
+                    Interficie.mostrarMissatge("Nom: " + nom + ", " + " Cognom: " + cognom + ", " + " DNI: " + dni + ", " + " Categoria: " + categoria + " Poblacio: " + poblacio + " Adreça: " + adreca);
                 }
             }
         } catch (Exception e) {
