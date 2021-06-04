@@ -200,7 +200,7 @@ public class Clients extends Persona {
             poblacio = rs.getString("poblacio");
 
             if (clientVip){
-                resultat = ("Nom: " + nom  + ", " + "Cognom: " +cognom + ", " + "Dni: " + dni + ", " + "Client Vip: " + clientVip +
+                resultat = ("Nom: " + nom  + ", " + "Cognom: " + cognom + ", " + "Dni: " + dni + ", " + "Client Vip: " + clientVip +
                         ", " + "Poblacio: " + poblacio + ", " + "Adreça: " +adreca) + "\n" + resultat;
             }
         }
