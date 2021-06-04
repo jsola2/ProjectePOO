@@ -18,12 +18,13 @@ public class Producte {
     Connection connexio = connect.getConnection();
 
     /**
-     *
-     * @param nom
-     * @param preu
-     * @param codi
-     * @param marca
-     * @param descripcio
+     *Aquest seria el constructor principal amb el qual podem crear nous productes i afegir-los a la base de dades.
+     * En aquest constructor tenim els següents paràmetres:
+     * @param nom insertem el nom del producte
+     * @param preu insertem preu del producte
+     * @param codi insertem el codi del producte
+     * @param marca insertem la marca del producte
+     * @param descripcio insertem la descripcio del producte.
      */
     public Producte(String nom , float preu, String codi, String marca, String descripcio){
         this.nom = nom;
@@ -34,7 +35,8 @@ public class Producte {
     }
 
     /**
-     *
+     * Aquest constructor és un constructor secundari  que serveix per realitzar consultes amb la necessitat de passar per paràmetre el dni.
+     * Ens mostraria el resultat de les consultes que realitzen les funcions amb el paramentre dni.
      * @param codi
      */
     public Producte(String codi)  {
@@ -46,16 +48,18 @@ public class Producte {
 
 
     /**
-     *
-     * @throws SQLException
+     *En aquesta funció el que fem és afegir els productes a la base de dades.
+     * Primer de tot el que fem és declarar els paràmetres que necessitàrem per fer l'insert a la taula gràcies al @PreparedStatement. Després necessitàrem crear un @Statement per realitzar la SELECT que necessitàrem.
+     * La SELECT està feta de tal forma que quan s'insereixi un nou producte, agafa l'últim client_id i li suma 1.
+     * Després gràcies al @Set posem l'índex del paràmetre i els valors que hem passat per paràmetre en el constructor.
+     * I per últim fem un executeUpdate().
      */
     public void afegirProducteBD () throws SQLException {
-        int producte_id = 0;
         PreparedStatement consulta = connexio.prepareStatement("INSERT INTO productes VALUES (?,?,?,?,?,?)");
         Statement stmt= connexio.createStatement();
         ResultSet rs=stmt.executeQuery("SELECT * FROM productes ORDER BY producte_id DESC ");
         rs.next();
-        producte_id = rs.getInt("producte_id");
+        int producte_id = rs.getInt("producte_id");
         consulta.setInt(1,producte_id+1);
         consulta.setString(2,nom);
         consulta.setFloat(4,preu);
@@ -66,8 +70,9 @@ public class Producte {
     }
 
     /**
-     *
-     * @throws SQLException
+     *En aquesta funció el que fem és eliminar els productes de la base de dades.
+     *Primer de tot el que fem és declarar els paràmetres que necessitàrem per fer l'insert a la taula gràcies al @PreparedStatement.
+     *Després gràcies al @Set posem l'índex del paràmetre i els valors que hem passat per paràmetre en el constructor, i per últim fem un executeUpdate().
      */
     public void borrarProducte () throws SQLException {
 
@@ -78,8 +83,9 @@ public class Producte {
     }
 
     /**
-     *
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els productes de la base de dades.
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades i després les printem gràcies a la funció Interficie.
      */
     public void mostrarProducteBD() throws SQLException {
 
@@ -104,10 +110,13 @@ public class Producte {
         connexio.close();
     }
 
-    /**
+     /**
+     *En aquesta funció el que fem és mostrar els prodcutes de la base de dades filtrats nom
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el producte que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pnom l'utilitzem per filtrar les dades
      *
-     * @param pnom
-     * @throws SQLException
      */
     public void mostrarProductaFiltratPerNom(String pnom) throws SQLException{
         Statement stmt= connexio.createStatement();
@@ -134,8 +143,11 @@ public class Producte {
 
     /**
      *
-     * @param pPreu
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els prodcutes de la base de dades filtrats preu
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el producte que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pPreu l'utilitzem per filtrar les dades
      */
     public void mostrarProductaFiltratPerPreu(float pPreu) throws SQLException{
         Statement stmt= connexio.createStatement();
@@ -161,9 +173,11 @@ public class Producte {
     }
 
     /**
-     *
-     * @param pCodi
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els prodcutes de la base de dades filtrats codi
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el producte que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pCodi l'utilitzem per filtrar les dades
      */
     public void mostrarProductaFiltratPerCodi(String pCodi) throws SQLException{
         Statement stmt= connexio.createStatement();
@@ -189,9 +203,11 @@ public class Producte {
     }
 
     /**
-     *
-     * @param pMarca
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els prodcutes de la base de dades filtrats marca
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el producte que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pMarca l'utilitzem per filtrar les dades
      */
     public void mostrarProductaFiltratPerMarca(String pMarca) throws SQLException{
         Statement stmt= connexio.createStatement();
@@ -217,9 +233,11 @@ public class Producte {
     }
 
     /**
-     *
-     * @param pDescripcio
-     * @throws SQLException
+     *En aquesta funció el que fem és mostrar els prodcutes de la base de dades filtrats Descripció
+     * Primer de tot el que fem és declarar els paràmetres i variables que necessitàrem per fer la consulta a la base de dades, també passem per paràmetres que necessitem per realitzar la filtració.
+     * Després gràcies al bucle while, el que fem és guardar els valors dins de les variables creades.
+     * Després fem un condicional per guardar el producte que nosaltres volem per després printar-lo gràcies a la funció Interficie.
+     * @param pDescripcio l'utilitzem per filtrar les dades
      */
     public void mostrarProductaFiltratPerDescripcio(String pDescripcio) throws SQLException{
         Statement stmt= connexio.createStatement();

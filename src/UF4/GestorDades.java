@@ -142,7 +142,7 @@ public class GestorDades {
     public void mostrarProductePerDescripcio() throws SQLException{
         Producte p = new Producte();
         Interficie.mostrarMissatge("descripció per filtrar:");
-        p.mostrarProductaFiltratPerMarca(in.next());
+        p.mostrarProductaFiltratPerDescripcio(in.next());
     }
 
     /**
