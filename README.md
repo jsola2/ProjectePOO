@@ -8,22 +8,22 @@
 
 <p>Com veus a la imatge, pots fer multiples funcions, tenint en comte la opció que vols utilitzar, podràs afegir, esborrar i mostrar per pantalla amb multiples opcions</p>
 
-<p>Ara farem una mostra de tots el usos de la aplicació</p>
+<h4>Ara farem una mostra de tots el usos de la aplicació</h4>
 
-<h4>Afegirem un nou producte, per tant seleccionem la opció 1: </h4>
+<p>Afegirem un nou producte, per tant seleccionem la opció 1: </p>
 
 ![image](https://user-images.githubusercontent.com/74617905/120678947-efab8300-c498-11eb-88e8-991f0331f87e.png)
 
 <p>Introduirem les dades que la aplicació et demana i premem enter, una vegada surt el missatge "Connexió de la base de dades establerta", significa que les dades 
 s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procés d'introducció de les teves dades.</p>
 
-<h4>Ara la esborrarem de la base de dades, per tant premem la opció 2: </h4>
+<p>Ara la esborrarem de la base de dades, per tant premem la opció 2: </p>
 
 ![image](https://user-images.githubusercontent.com/74617905/120679330-5892fb00-c499-11eb-831c-3829905770ea.png)
 
 <p>Recorda que mentre la connexió de la base de dades és establerta, no pot apagar l'ordinador, podries fe mal tota la base de dades!</p>
 
-<h4>Anem a mostrar els productes de la nostra base de dades, per tant premem l'opció 3: </h4>
+<p>Anem a mostrar els productes de la nostra base de dades, per tant premem l'opció 3: </p>
 
 ![image](https://user-images.githubusercontent.com/74617905/120680216-58dfc600-c49a-11eb-8ac5-820a7ea90a3a.png)
 
@@ -58,14 +58,13 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 ![image](https://user-images.githubusercontent.com/74617905/120763078-29bb6a00-c517-11eb-8c64-fbc6e14964b8.png)
 
 <h4>Ara aprendrem a afegir, esborrar i mostrar Clients de la nostra base de dades.</h4>
-<p>Per afegir un nou client, polsarem la opció 4 i ens demanarà les dades del client, una vegada introduïm les seves dades, polsem enter i a contunació ja tindrem el nostre client pujat a la base de dades: </p>
+<p>Per afegir un nou client, polsarem la opció 4 i ens demanarà les dades del client, una vegada introduïm les seves dades, polsem enter i a contunació ja tindrem el nostre client pujat a la base de dades: </h4>
 
 ![image](https://user-images.githubusercontent.com/74617905/120764787-cfbba400-c518-11eb-8893-866aab2d1a68.png)
 
 <p>Ara esborrarem un client, polsarem la opció 5:</p>
 
 ![image](https://user-images.githubusercontent.com/74617905/120767717-bbc57180-c51b-11eb-9368-c69d433bd95c.png)
-
 
 <p>Per cercar un client filtrat per nom i DNI, polsarem la opció 6 i seguidament polsarem 1 en el submenú: </p>
 
@@ -84,11 +83,45 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 <h4>I per finalitzar, anirem a la part d'afegir, esborrar i mostrar els nostres Empleats.</h4>
 <p>A la opció 7 del menú principal, tenim la part d'afegir un treballador: </p>
 
+![image](https://user-images.githubusercontent.com/74617905/120794114-166cc680-c538-11eb-832d-2fcb47687557.png)
 
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<p>Una vegada polsem 7, ens demanaà introduïr les dades del treballador, polsem enter i ja tindrem introduït el treballador: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120794303-53d15400-c538-11eb-8c73-4122feeba402.png)
+
+<p>Ara esborrarem un registre de un treballador de la nostra base de dades, llavors premem 8 i introduïm el DNI del treballador: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120794643-c8a48e00-c538-11eb-91de-ca13c8637763.png)
+
+<p>Ja quasi bé acabant de mostar com funciona el gestor BRJ©, tenim la opció 9 del menú, que endinsarà en un submenu per mostrar els empoleats que hi tenim a la base de dades, filtrant i sense filtre: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120794946-2507ad80-c539-11eb-83b8-690ae2587333.png)
+
+<p>Vinga, començem amb la opció 1, on ens demanarà el nom del nostre treballador a mostrar: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120795092-53858880-c539-11eb-82a0-1dd61ccfd52a.png)
+
+<p>I ens dona la resposta del que busquem, anem amb l'opció 2, ens demanarà possar el cognom del treballador que volem buscar: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120795288-92b3d980-c539-11eb-9ee4-7b7803a84099.png)
+
+<p>Ara utilitzarem la opció número 3, que ens demanarà el DNI d'un empleat, vinga som-hi!: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120795469-d0b0fd80-c539-11eb-8445-26bf98670732.png)
+
+<p>Quants empleats tenim al bar o quants cambrers tenim? Premem el botó 4 del nostre teclat i ens filtrarà per categoria: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120795694-1a99e380-c53a-11eb-96b4-ed6459f42adc.png)
+
+<p>Ens ha sortit un problema i tenim moltes reserves aquesta nit, no volem molestar a un treballador que viu molt lluny, doncs busquem per població, polsem la opció 5: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120797631-95fc9480-c53c-11eb-8615-2d1d6bc2f407.png)
+
+<p>I per acabar de filtrar, podrem fer-ho més concretament per la adreça del nostre treballador, polsem 6: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120802381-aadc2680-c542-11eb-8fdc-bb8fafee045e.png)
+ 
+
 <h3>Video</h3>
 
 <p></p>
