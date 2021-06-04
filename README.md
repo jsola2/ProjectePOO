@@ -27,14 +27,66 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 
 ![image](https://user-images.githubusercontent.com/74617905/120680216-58dfc600-c49a-11eb-8ac5-820a7ea90a3a.png)
 
-<p>Com veuràs, surt un submenú, en el qual podem filtrar per moltes opcions. Fem una proba, anem a filtrar per el codi del producte, polsem l'opció 3: </p>
+<p>Com veuràs, surt un submenú, en el qual podem filtrar per moltes opcions. Fem una proba, anem a filtrar per el nom del producte, polsem l'opció 1: </p>
 
-![image](https://user-images.githubusercontent.com/74617905/120680575-becc4d80-c49a-11eb-9a34-66519cc6bff3.png)
+![image](https://user-images.githubusercontent.com/74617905/120759170-068ebb80-c513-11eb-9396-73ad542f9f69.png)
 
-<p>Ja tenim la consulta feta, com hem introduït la opció 3 i hem posat el codi "RN" ens han sortit tots els rons que hi han a la base de dades.</p>
+<p>Ja tenim la consulta feta, com hem introduït la opció 1 i hem possat el nom del producte, ens han sortit tots els registres amb el mateix nom.</p>
 
-<h4>Ara que ja sabem com funcionen totes les opcions, tenim que sortir, polsem l'opció 0 i sortirem del submenú, una vegada al menú principal tornem a polsar 0 i sortim del gestor.</h4>
+<p>Per filtrar per preu, polsarem l'opció 2 del submenú: </p>
 
+![image](https://user-images.githubusercontent.com/74617905/120759734-9b91b480-c513-11eb-8dc9-d1837b41aa6e.png)
+
+<p>Per filtrar per codi polsarem 3 del submenú: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120761283-5078a100-c515-11eb-8222-8df254ccb01b.png)
+
+<p>Si volem filtrar per marca polsarem la opció 4: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120761492-89b11100-c515-11eb-8eb1-2ef2657c0661.png)
+
+<p>Amb la opció 5, farem una recerca per descripció: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120762145-430fe680-c516-11eb-8496-cc021996b5bf.png)
+
+<p>Per acabar, si no volem filtrar i volem veure tot el que tenim a la base de dades, polsarem la opció 6: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120762899-009ad980-c517-11eb-949b-ca73f85aeb1b.png)
+
+<p>Ara que ja sabem com funcionen totes les opcions i tenim que sortir, per això polsem la opció 0 i sortirem del submenú, una vegada al menú principal tornem a polsar 0 i sortirem del gestor.</p>
+
+![image](https://user-images.githubusercontent.com/74617905/120763078-29bb6a00-c517-11eb-8c64-fbc6e14964b8.png)
+
+<h4>Ara aprendrem a afegir, esborrar i mostrar Clients de la nostra base de dades.</h4>
+<p>Per afegir un nou client, polsarem la opció 4 i ens demanarà les dades del client, una vegada introduïm les seves dades, polsem enter i a contunació ja tindrem el nostre client pujat a la base de dades: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120764787-cfbba400-c518-11eb-8893-866aab2d1a68.png)
+
+<p>Ara esborrarem un client, polsarem la opció 5:</p>
+
+![image](https://user-images.githubusercontent.com/74617905/120767717-bbc57180-c51b-11eb-9368-c69d433bd95c.png)
+
+
+<p>Per cercar un client filtrat per nom i DNI, polsarem la opció 6 i seguidament polsarem 1 en el submenú: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120769438-6ab67d00-c51d-11eb-8814-9dfee1b6aa94.png)
+
+![image](https://user-images.githubusercontent.com/74617905/120769503-7ace5c80-c51d-11eb-89ed-e2f9979ab541.png)
+
+<p>Filtrarem per clients Vip polsem 2 al submenú: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120769614-99345800-c51d-11eb-9055-06432aca3f82.png)
+
+<p>I si no volem filtrar per res, polsarem la opció 3 al submenú: </p>
+
+![image](https://user-images.githubusercontent.com/74617905/120769894-dd275d00-c51d-11eb-9edc-676956a873ba.png)
+
+<h4>I per finalitzar, anirem a la part d'afegir, esborrar i mostrar els nostres Empleats.</h4>
+<p>A la opció 7 del menú principal, tenim la part d'afegir un treballador: </p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <h3>Video</h3>
 
 <p></p>
