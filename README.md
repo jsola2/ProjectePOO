@@ -95,11 +95,11 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 
 <p>Ja quasi bé acabant de mostar com funciona el gestor BRJ©, tenim la opció 9 del menú, que endinsarà en un submenu per mostrar els empoleats que hi tenim a la base de dades, filtrant i sense filtre: </p>
 
-![image](https://user-images.githubusercontent.com/74617905/120794946-2507ad80-c539-11eb-83b8-690ae2587333.png)
+![image](https://user-images.githubusercontent.com/74617905/120806352-0b6d6280-c547-11eb-9da1-ea6684025def.png)
 
 <p>Vinga, començem amb la opció 1, on ens demanarà el nom del nostre treballador a mostrar: </p>
 
-![image](https://user-images.githubusercontent.com/74617905/120795092-53858880-c539-11eb-82a0-1dd61ccfd52a.png)
+![image](https://user-images.githubusercontent.com/74617905/120806459-2c35b800-c547-11eb-8dec-9aa610386a61.png)
 
 <p>I ens dona la resposta del que busquem, anem amb l'opció 2, ens demanarà possar el cognom del treballador que volem buscar: </p>
 
