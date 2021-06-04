@@ -124,7 +124,9 @@ s'estan introduïnt, en quan torni el menú principal, ja haura acabat el procé
 
 <h3>Video</h3>
 
-<p></p>
+<h5>Video explicatiu de les funcionalitats del programa</h5>
+
+https://drive.google.com/file/d/14Syo6vikuVl0imLvzhUyLyBanc7VK_om/view?usp=sharing
 
 <h3>POO</h3>
 
