@@ -18,19 +18,20 @@ public class Interficie {
      * Aquesta funció serveix per mostrar la part principal del menú
      * ok
      */
+
     public void mostrarMenu() {
         System.out.println(
-                """
-                        |1- Afegir producte
-                        2- Esborrar producte
-                        3- Consultar dades de productes
-                        4- Afegir client
-                        5- Esborrar client
-                        6- Consultar dades de client
-                        7- Afegir Treballador
-                        8- Esborrar Treballador
-                        9- Consultar dades de Treballador
-                        0- Sortir"""
+
+                        "1- Afegir producte" + "\n" +
+                        "2- Esborrar producte" + "\n" +
+                        "3- Consultar dades de productes" + "\n" +
+                        "4- Afegir client" + "\n" +
+                        "5- Esborrar client" + "\n" +
+                        "6- Consultar dades de client" + "\n" +
+                        "7- Afegir Treballador" + "\n" +
+                        "8- Esborrar Treballador" + "\n" +
+                        "9- Consultar dades de Treballador" + "\n" +
+                        "0- Sortir"
 
         );
     }
