@@ -15,6 +15,7 @@ public class Interficie {
 
     /**
      *Aquesta funció serveix per mostrar la part principal del menú
+     * ok
      */
     public static void mostrarMenu(){
         System.out.println(
