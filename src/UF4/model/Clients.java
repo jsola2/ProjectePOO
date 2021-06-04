@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Clients extends Persona {
     Interficie Interficie = new Interficie();
 
-    protected boolean clientVip;
+    protected String clientVip;
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection connexio = connect.getConnection();
 
@@ -29,7 +29,7 @@ public class Clients extends Persona {
      * @param clientVip insertem aquest parametre per saber si el client es vip o no
      * Aquests paràmetres són heretats de la classe persona.
      */
-    public Clients(String nom , String cognoms, String dni,String poblacio, String adreca, boolean clientVip){
+    public Clients(String nom , String cognoms, String dni,String poblacio, String adreca, String clientVip){
         super(nom,cognoms,dni,poblacio,adreca);
         this.nom = nom;
         this.cognom = cognoms;
@@ -80,12 +80,13 @@ public class Clients extends Persona {
         ResultSet rs=stmt.executeQuery("SELECT * FROM clients ORDER BY client_id DESC ");
         rs.next();
         int client_id = rs.getInt("client_id");
+        boolean Vip = clientVip.equals("Si".toLowerCase());
 
         consulta.setInt(1,client_id+1);
         consulta.setString(2,dni);
         consulta.setString(3,nom);
         consulta.setString(4,cognom);
-        consulta.setBoolean(5,clientVip);
+        consulta.setBoolean(5,Vip);
         consulta.setString(6,poblacio);
         consulta.setString(7,adreca);
         consulta.executeUpdate();
@@ -167,8 +168,7 @@ public class Clients extends Persona {
             poblacio = rs.getString("poblacio");
 
             if (nomClient.equals(nom) && dni.equals(dniClient)){
-                resultat = ("Nom: " + nom  + ", " + "Cognom: " +cognom + ", " + "Dni: " + dni + ", " + "Client Vip: " + clientVip +
-                        ", " + "Poblacio: " + poblacio + ", " + "Adreça: " +adreca);
+                resultat = "";
             }
         }
         Interficie.mostrarMissatge(Objects.requireNonNullElse(resultat, "No s'ha trobat el client"));
