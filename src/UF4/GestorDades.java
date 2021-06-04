@@ -32,7 +32,7 @@ public class GestorDades {
         String poblacio = in.nextLine();
         Interficie.mostrarMissatge("Adreça: ");
         String adreca = in.nextLine();
-        Interficie.mostrarMissatge("Client Vip?: ");
+        Interficie.mostrarMissatge("Client Vip? (Si) o (No): ");
         String clientVip = in.nextLine();
         Clients newClient = new Clients(nom,cognom,dni,poblacio,adreca,clientVip);
         newClient.afegirClientBD();
