@@ -14,7 +14,7 @@ public class ProjectePOO {
      */
     public static void main(String[] args) throws SQLException {
         Scanner in = new Scanner(System.in);
-
+        Interficie Interficie = new Interficie();
         GestorDades gestor = new GestorDades();
         boolean fimenu = false;
 

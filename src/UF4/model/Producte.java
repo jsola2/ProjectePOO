@@ -16,6 +16,7 @@ public class Producte {
     protected String descripcio;
     ConectarBaseDades connect = new ConectarBaseDades();
     Connection connexio = connect.getConnection();
+    Interficie Interficie = new Interficie();
 
     /**
      *Aquest seria el constructor principal amb el qual podem crear nous productes i afegir-los a la base de dades.

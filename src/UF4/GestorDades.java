@@ -10,6 +10,7 @@ import java.util.Scanner;
  * En aquesta classe tenim totes les funcions que gestionen el funcionament del programa i també el gestionen les modificacions de les dades realitzades per l'usuari.
  */
 public class GestorDades {
+    Interficie Interficie = new Interficie();
 
     /**
      * Declarem el Scanner aqui perqué no hi hagi tant de codi repetit

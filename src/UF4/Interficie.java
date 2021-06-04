@@ -4,20 +4,23 @@ package UF4;
  *Aquesta classe és l'encarregada de mostrar tots els missatges perquè l'experiència d'usuari sigui bona. També estan les opcions del nostre menú i sub menú.
  */
 public class Interficie {
+    public  Interficie(){
 
+    }
     /**
      * Aquesta funció serveix per mostrar tots els missatges que és passa per paràmetre.
+     *
      * @param missatge passem el misstatge per parametre
      */
-    public static void mostrarMissatge (String missatge){
+    public void mostrarMissatge(String missatge) {
         System.out.println(missatge);
     }
 
     /**
-     *Aquesta funció serveix per mostrar la part principal del menú
+     * Aquesta funció serveix per mostrar la part principal del menú
      * ok
      */
-    public static void mostrarMenu(){
+    public void mostrarMenu() {
         System.out.println(
                 "1- Afegir producte" + "\n" +
                         "2- Esborrar producte" + "\n" +
@@ -33,37 +36,37 @@ public class Interficie {
     }
 
     /**
-     *Aquesta funció serveix per mostrar el menú de productes.
+     * Aquesta funció serveix per mostrar el menú de productes.
      */
-    public static void mostarSubMenuProductes(){
-       System.out.println(
-               "1- Filtar per nom" + "\n" +
-                       "2- Filtrar per preu" + "\n" +
-                       "3- Filtrar per codi" + "\n" +
-                       "4- Filtrar per marca" + "\n"+
-                       "5- Filtrar per descripció" + "\n"+
-                       "6- Sense filtrat" + "\n" +
-                       "0- Sortir"
-       );
-   }
-
-    /**
-     *Aquesta funció serveix per mostrar el menú de Clients.
-     */
-    public static void mostarSubMenuClients(){
+    public void mostarSubMenuProductes() {
         System.out.println(
-
-                "1- Filtar per nom i dni" + "\n" +
-                "2- Mostrar nomes clients Vip" + "\n" +
-                "3- Sense filtrat" + "\n" +
-                "0- Sortir"
+                "1- Filtar per nom" + "\n" +
+                        "2- Filtrar per preu" + "\n" +
+                        "3- Filtrar per codi" + "\n" +
+                        "4- Filtrar per marca" + "\n" +
+                        "5- Filtrar per descripció" + "\n" +
+                        "6- Sense filtrat" + "\n" +
+                        "0- Sortir"
         );
     }
 
     /**
-     *Aquesta funció serveix per mostrar el menú d'Empleats.
+     * Aquesta funció serveix per mostrar el menú de Clients.
      */
-    public static void mostarSubMenuEmpleats(){
+    public void mostarSubMenuClients() {
+        System.out.println(
+
+                "1- Filtar per nom i dni" + "\n" +
+                        "2- Mostrar nomes clients Vip" + "\n" +
+                        "3- Sense filtrat" + "\n" +
+                        "0- Sortir"
+        );
+    }
+
+    /**
+     * Aquesta funció serveix per mostrar el menú d'Empleats.
+     */
+     public void mostarSubMenuEmpleats() {
         System.out.println(
                 "1- Filtar per nom" + "\n" +
                         "2- Filtrar per cognom" + "\n" +

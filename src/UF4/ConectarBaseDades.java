@@ -7,6 +7,7 @@ import java.sql.*;
  * Com podem veure declarem variables estàtiques perquè el codi més net.
  */
 public class ConectarBaseDades {
+    Interficie Interficie = new Interficie();
 
     /**
      * Varables estatiques

@@ -12,6 +12,7 @@ import java.util.Objects;
  * També aquesta classe hereta paràmetres de la classe persona
  */
 public class Clients extends Persona {
+    Interficie Interficie = new Interficie();
 
     protected boolean clientVip;
     ConectarBaseDades connect = new ConectarBaseDades();
