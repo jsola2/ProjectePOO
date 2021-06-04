@@ -11,18 +11,16 @@ public class Interficie {
      * @param missatge passem el misstatge per parametre
      */
     public void mostrarMissatge(String missatge) {
-        System.out.println(missatge);
+        System.out.printf("%-15s\n",missatge);
     }
 
     /**
      * Aquesta funció serveix per mostrar la part principal del menú
      * ok
      */
-
     public void mostrarMenu() {
         System.out.println(
-
-                        "1- Afegir producte" + "\n" +
+                "1- Afegir producte" + "\n" +
                         "2- Esborrar producte" + "\n" +
                         "3- Consultar dades de productes" + "\n" +
                         "4- Afegir client" + "\n" +
@@ -32,7 +30,6 @@ public class Interficie {
                         "8- Esborrar Treballador" + "\n" +
                         "9- Consultar dades de Treballador" + "\n" +
                         "0- Sortir"
-
         );
     }
 
